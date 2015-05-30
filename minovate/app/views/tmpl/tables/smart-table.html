@@ -1,0 +1,312 @@
+<div class="page page-smart-table">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Tables</a>
+        </li>
+        <li>
+          <a ui-sref="app.tables.smart-table">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+      <!-- col -->
+      <div class="col-md-12">
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01" ng-controller="BasicTableCtrl">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Search/</strong>Filter</h1>
+            <ul class="controls">
+              <li>
+                <a href ng-click="addRandomItem(row)"><i class="fa fa-plus"></i> Add Item</a>
+              </li>
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+            <form>
+              <label for="predicate">selected predicate:</label>
+              <select class="form-control mb-10" id="predicate" ng-model="selectedPredicate" ng-options="predicate for predicate in predicates"></select>
+            </form>
+
+            <table st-table="rowCollection" class="st-table table table-striped table-custom">
+              <thead>
+              <tr>
+                <th st-sort="firstName" st-sort-default class="sorting">First name</th>
+                <th st-sort="lastName" class="sorting">Last name</th>
+                <th st-sort="birthDate" class="sorting">Birth date</th>
+                <th st-sort="balance" class="sorting">Balance</th>
+                <th>Actions</th>
+              </tr>
+              <tr class="st-filters">
+                <th>
+                  <input st-search="'firstName'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+                </th>
+                <th colspan="3">
+                  <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+                </th>
+                <th>
+                  <input st-search="selectedPredicate" placeholder="bound predicate" class="input-sm form-control" type="search"/>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="row in rowCollection">
+                <td>{{row.firstName | uppercase}}</td>
+                <td>{{row.lastName}}</td>
+                <td>{{row.birthDate | date}}</td>
+                <td>{{row.balance | currency}}</td>
+                <td>
+                  <a href ng-click="removeItem(row)" class="text-danger text-uppercase text-strong text-sm">Remove</a>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen02">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Row </strong>Select</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="RowTableCtrl">
+
+            <form>
+              <label for="predicate">Items per page:</label>
+              <input class="input-sm form-control" name="items" id="items" type="number" ng-model="itemsByPage">
+            </form>
+
+            <table st-table="rowCollection" class="st-table table table-custom">
+              <thead>
+              <tr>
+                <th st-sort="firstName" st-sort-default class="sorting">First name</th>
+                <th st-sort="lastName" class="sorting">Last name</th>
+                <th st-sort="birthDate" class="sorting">Birth date</th>
+                <th st-sort="balance" class="sorting">Balance</th>
+                <th>Email</th>
+              </tr>
+              <tr class="st-filters">
+                <th>
+                  <input st-search="'firstName'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+                </th>
+                <th colspan="4">
+                  <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr st-select-row="row" st-select-mode="multiple" ng-repeat="row in rowCollection">
+                <td>{{row.firstName | uppercase}}</td>
+                <td>{{row.lastName}}</td>
+                <td>{{row.birthDate | date}}</td>
+                <td>{{row.balance | currency}}</td>
+                <td><a ng-href="mailto:{{row.email}}">email</a></td>
+              </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen03">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Pipe/Ajax </strong>Plugin</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="PipeTableCtrl">
+
+            <table st-table="rowCollection"  st-pipe="callServer" class="st-table table table-custom">
+              <thead>
+              <tr>
+                <th st-sort="firstName" st-sort-default class="sorting">First name</th>
+                <th st-sort="lastName" class="sorting">Last name</th>
+                <th st-sort="birthDate" class="sorting">Birth date</th>
+                <th st-sort="balance" class="sorting">Balance</th>
+                <th>Email</th>
+              </tr>
+              <tr class="st-filters">
+                <th>
+                  <input st-search="firstName" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+                </th>
+                <th colspan="4">
+                  <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+                </th>
+              </tr>
+              </thead>
+              <tbody ng-hide="isLoading">
+              <tr ng-repeat="row in rowCollection">
+                <td>{{row.firstName | uppercase}}</td>
+                <td>{{row.lastName}}</td>
+                <td>{{row.birthDate | date}}</td>
+                <td>{{row.balance | currency}}</td>
+                <td><a ng-href="mailto:{{row.email}}">email</a></td>
+              </tr>
+              </tbody>
+              <tbody ng-show="isLoading">
+              <tr>
+                <td colspan="5" class="text-center"><div class="loading-indicator"></div></td>
+              </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+      </div>
+      <!-- /col -->
+    </div>
+    <!-- /row -->
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

@@ -1,0 +1,125 @@
+{
+  "name": "minovate",
+  "version": "1.2.0",
+  "dependencies": {
+    "angular": "~1.3.12",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.1.0",
+    "bootstrap": "~3.3.2",
+    "angular-resource": "1.3.12",
+    "angular-cookies": "1.3.12",
+    "angular-sanitize": "1.3.12",
+    "angular-animate": "1.3.12",
+    "angular-touch": "1.3.12",
+    "bourbon": "~4.0.2",
+    "angular-fontawesome": "~0.1.2",
+    "font-awesome": "~4.2.0",
+    "weather-icons": "~1.3.2",
+    "angular-bootstrap": "~0.12.0",
+    "jquery.slimscroll": "~1.3.1",
+    "animate.css": "~3.2.0",
+    "jquery.sparkline": "http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.js",
+    "angular-loading-bar": "~0.5.1",
+    "angular-ui-router": "~0.2.11",
+    "angular-ui-utils": "~0.1.1",
+    "bootstrap-daterangepicker": "~1.3.12",
+    "ng-bs-daterangepicker": "~0.0.3",
+    "angular-momentjs": "~0.1.8",
+    "angular-fullscreen": "~1.0.0",
+    "angular-ui-tree": "~2.1.5",
+    "simple-line-icons": "~0.0.1",
+    "html.sortable": "~0.1.5",
+    "angular-toastr": "~1.0.0-beta.2",
+    "angular-bootstrap-nav-tree": "*",
+    "oclazyload": "~0.3.8",
+    "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.2.0/chosen_v1.2.0.zip",
+    "angular-ui-select": "~0.8.3",
+    "textAngular": "~1.2.2",
+    "angular-bootstrap-colorpicker": "~3.0.8",
+    "angular-file-upload": "~1.1.5",
+    "ngImgCrop": "~0.2.0",
+    "angular-datatables": "~0.4.0",
+    "angular-ui-grid": "~3.0.0-RC.18",
+    "ng-table": "~0.3.3",
+    "angular-smart-table": "~1.4.2",
+    "morrisjs": "~0.5.1",
+    "flot": "~0.8.3",
+    "flot.tooltip": "~0.8.4",
+    "angular-flot": "~0.0.6",
+    "flot-spline": "*",
+    "d3": "~3.4.13",
+    "rickshaw": "~1.5.0",
+    "angular-rickshaw": "~0.5.0",
+    "owl-carousel": "~1.3.2",
+    "angular-google-maps": "~2.0.9",
+    "angular-ui-calendar": "~0.8.1",
+    "jquery.easy-pie-chart": "~2.1.6"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.16",
+    "angular-scenario": "1.2.16"
+  },
+  "overrides": {
+    "chosen": {
+      "main": [
+        "chosen.jquery.min.js",
+        "chosen.min.css"
+      ]
+    },
+    "rickshaw": {
+      "main": [
+        "rickshaw.js",
+        "rickshaw.min.css"
+      ]
+    },
+    "angular-toastr": {
+      "main": [
+        "./dist/angular-toastr.css",
+        "./dist/angular-toastr.tpls.js"
+      ]
+    },
+    "flot": {
+      "main": [
+        "jquery.flot.js",
+        "jquery.flot.resize.js"
+      ]
+    },
+    "flot-spline": {
+      "main": "./js/jquery.flot.spline.min.js"
+    },
+    "jquery.easy-pie-chart": {
+      "main": "./dist/angular.easypiechart.min.js",
+      "dependencies": {
+        "jquery": ">=1.9.0"
+      }
+    },
+    "angular-datatables": {
+      "main": [
+        "./dist/angular-datatables.min.js",
+        "./dist/plugins/bootstrap/angular-datatables.bootstrap.min.js",
+        "./dist/plugins/colreorder/angular-datatables.colreorder.min.js",
+        "./dist/plugins/columnfilter/angular-datatables.columnfilter.min.js",
+        "./dist/plugins/colvis/angular-datatables.colvis.min.js",
+        "./dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.min.js",
+        "./dist/plugins/fixedheader/angular-datatables.fixedheader.min.js",
+        "./dist/plugins/scroller/angular-datatables.scroller.min.js",
+        "./dist/plugins/tabletools/angular-datatables.tabletools.min.js"
+      ]
+    },
+    "owl-carousel": {
+      "main": [
+        "./owl-carousel/owl.carousel.min.js",
+        "./owl-carousel/owl.carousel.css",
+        "./owl-carousel/owl.theme.css"
+      ]
+    }
+  },
+  "appPath": "app",
+  "resolutions": {
+    "es5-shim": "~3.1.0",
+    "angular": "1.3.12",
+    "bootstrap": "~3.3.2",
+    "rickshaw": "~1.5.0",
+    "jquery": ">= 1.9.0"
+  }
+}

@@ -1,0 +1,50 @@
+<!-- This is the left hand navigation menu. -->
+
+<div id="sidebar-wrap" ng-controller="NavCtrl">
+  <accordion close-others="oneAtTime" slimscroll="{height: '100%'}">
+
+    <accordion-group is-open="status.isFirstOpen" ng-class="{'open': status.isFirstOpen, 'closed': !status.isFirstOpen}">
+      <accordion-heading>
+        Navigation <i class="fa" ng-class="{'fa-angle-up': status.isFirstOpen, 'fa-angle-down': !status.isFirstOpen}"></i>
+      </accordion-heading>
+      <ul id="navigation" nav-collapse ripple>
+        <li ui-sref-active="active"><a ui-sref="app.dashboard"><fa name="dashboard"></fa> <span>Dashboard</span></a></li>
+        
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.forms')}">
+           <a ui-sref="app.forms"><fa name="list"></fa> <span>Form Stuff</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.forms.common"><fa name="caret-right"></fa> Common Elements</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.forms.validate"><fa name="caret-right"></fa> Validation Elements</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.forms.wizard"><fa name="caret-right"></fa> Form Wizard <span class="badge badge-success">13</span></a></li>
+            <li ui-sref-active="active"><a ui-sref="app.forms.upload"><fa name="caret-right"></fa> File Upload</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.forms.imgcrop"><fa name="caret-right"></fa> Image Crop</a></li>
+          </ul>
+        </li>
+
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.ui')}">
+          <a ui-sref="app.ui"><fa name="pencil"></fa> <span>UI Kit</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="app.ui.general"><fa name="caret-right"></fa> General Elements</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.buttons-icons"><fa name="caret-right"></fa> Buttons & Icons</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.typography"><fa name="caret-right"></fa> Typography</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.navs"><fa name="caret-right"></fa> Navigation & Accordions</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.modals"><fa name="caret-right"></fa> Modals</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.tiles"><fa name="caret-right"></fa> Tiles</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.portlets"><fa name="caret-right"></fa> Portlets</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.grid"><fa name="caret-right"></fa> Grid</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.widgets"><fa name="caret-right"></fa> Widgets</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.tree"><fa name="caret-right"></fa> Tree </a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.lists"><fa name="caret-right"></fa> Lists</a></li>
+            <li ui-sref-active="active"><a ui-sref="app.ui.alerts"><fa name="caret-right"></fa> Alerts & Notifications</a></li>
+          </ul>
+        </li>
+         
+
+        <li ui-sref-active="active"><a ui-sref="app.help"><fa name="book"></fa> <span>Documentation</span></a></li>
+
+      </ul>
+    </accordion-group>
+
+
+  </accordion>
+</div>

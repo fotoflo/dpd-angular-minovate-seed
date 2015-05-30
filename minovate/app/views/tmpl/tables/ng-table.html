@@ -1,0 +1,495 @@
+<div class="page page-ng-table">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Tables</a>
+        </li>
+        <li>
+          <a ui-sref="app.tables.ng-table">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Table</strong> Sorting</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TableSortCtrl">
+
+            <button ng-click="tableParams.sorting({})" class="btn btn-default btn-sm mb-10 pull-right">Clear sorting</button>
+            <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}</p>
+
+            <table ng-table="tableParams" class="table table-custom">
+              <tr ng-repeat="user in $data">
+                <td data-title="'Name'" sortable="'name'">
+                  {{user.name}}
+                </td>
+                <td data-title="'Age'" sortable="'age'">
+                  {{user.age}}
+                </td>
+              </tr>
+            </table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen03">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Editable</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TableEditCtrl">
+
+            <button ng-click="tableParams.sorting({})" class="btn btn-default">Clear sorting</button>
+
+            {{checkboxes.items}}
+
+            <table ng-table="tableParams" class="table table-custom">
+              <tr ng-repeat="user in $data">
+                <td width="30" style="text-align: left" header="'ng-table/headers/checkbox.html'">
+                  <label class="checkbox checkbox-custom checkbox-custom-sm m-0"><input type="checkbox" ng-model="checkboxes.items[user.id]"><i></i></label>
+                </td>
+                <td data-title="'Name'" sortable="'name'">
+                  <span ng-if="!user.$edit">{{user.name}}</span>
+                  <div ng-if="user.$edit"><input class="form-control input-sm" type="text" ng-model="user.name" /></div>
+                </td>
+                <td data-title="'Age'" width="200" sortable="'age'">
+                  <span ng-if="!user.$edit">{{user.age}}</span>
+                  <div ng-if="user.$edit"><input class="form-control input-sm" type="number" ng-model="user.age" /></div>
+                </td>
+                <td data-title="'Money'" sortable="'money'">
+                  <span ng-if="!user.$edit">{{user.money}}</span>
+                  <div ng-if="user.$edit"><input class="form-control input-sm" type="number" ng-model="user.money" /></div>
+                </td>
+                <td data-title="'Actions'" width="200">
+                  <a ng-if="!user.$edit" href="" ng-click="user.$edit = true" class="text-primary text-uppercase text-strong text-sm mr-10">Edit</a>
+                  <a ng-if="user.$edit" href="" ng-click="user.$edit = false" class="text-success text-uppercase text-strong text-sm mr-10 inline-block" style="margin-top: 7px">Save</a>
+                </td>
+              </tr>
+            </table>
+            <script type="text/ng-template" id="ng-table/headers/checkbox.html">
+              <label class="checkbox checkbox-custom checkbox-custom-sm m-0"><input type="checkbox" ng-model="checkboxes.checked" id="select_all" name="filter-checkbox" value=""><i></i></label>
+            </script>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen05">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Dynamic</strong> Grouping</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen05 = !isFullscreen05">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TableGroupCtrl">
+
+            Group by:
+            <select ng-model="groupby">
+              <option value="name">Name</option>
+              <option value="age">Age</option>
+              <option value="role">Role</option>
+              <option value="date">Etc</option>
+            </select>
+            <br>
+            Grouped by: <b>{{groupby}}</b>
+
+            <table ng-table="tableParams" class="table table-custom">
+              <tbody ng-repeat="group in $groups">
+              <tr class="ng-table-group">
+                <td colspan="{{$columns.length}}">
+                  <a href="" ng-click="group.$hideRows = !group.$hideRows">
+                    <i class="fa" ng-class="{ 'fa-chevron-right': group.$hideRows, 'fa-chevron-down': !group.$hideRows }"></i>
+                    <strong>{{ group.value }}</strong>
+                  </a>
+                </td>
+              </tr>
+              <tr ng-hide="group.$hideRows" ng-repeat="user in group.data">
+                <td sortable="name" data-title="'Name'">
+                  {{user.name}}
+                </td>
+                <td sortable="age" data-title="'Age'">
+                  {{user.age}}
+                </td>
+                <td sortable="name" data-title="'Role'">
+                  {{user.role}}
+                </td>
+                <td sortable="name" data-title="'Etc'">
+                  {{user.date}}
+                </td>
+              </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+      </div>
+      <!-- /col -->
+
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen02">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Table </strong>Filtering</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TableFilterCtrl">
+
+            <button ng-click="tableParams.sorting({})" class="btn btn-default pull-right">Clear sorting</button>
+            <button ng-click="tableParams.filter({})" class="btn btn-default pull-right">Clear filter</button>
+            <p><strong>Sorting:</strong> {{tableParams.sorting()|json}}
+            <p><strong>Filter:</strong> {{tableParams.filter()|json}}
+
+            <table ng-table="tableParams" show-filter="true" class="table table-custom">
+              <tr ng-repeat="user in $data">
+                <td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">
+                  {{user.name}}
+                </td>
+                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
+                  {{user.age}}
+                </td>
+              </tr>
+            </table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen04">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Dynamic</strong> Columns</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TableColumnsCtrl">
+
+            Columns:
+            <label class="checkbox checkbox-custom" ng-repeat="column in columns">
+              <input type="checkbox" ng-model="column.visible" /><i></i> {{column.title}}
+            </label>
+
+            <table ng-table="tableParams" show-filter="true" class="table table-custom">
+              <thead>
+              <tr>
+                <th ng-repeat="column in columns" ng-show="column.visible"
+                    class="text-center sortable" ng-class="{
+                            'sort-asc': tableParams.isSortBy(column.field, 'asc'),
+                            'sort-desc': tableParams.isSortBy(column.field, 'desc')
+                          }"
+                    ng-click="tableParams.sorting(column.field, tableParams.isSortBy(column.field, 'asc') ? 'desc' : 'asc')">
+                  <div>{{column.title}}</div>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="user in $data">
+                <td ng-repeat="column in columns" ng-show="column.visible" sortable="column.field">
+                  {{user[column.field]}}
+                </td>
+              </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen06">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Row </strong>Selection</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen06 = !isFullscreen06">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TableRowCtrl">
+
+            <button class="btn btn-default btn-sm pull-right" ng-click="tableParams.data[1].$selected = true">Select second row</button>
+            <div>
+              <strong>Selected users:</strong> {{ data | filter:{"$selected": true} }}
+            </div>
+
+            <table ng-table="tableParams" show-filter="true" class="table table-custom ng-table-rowselected">
+              <tr ng-repeat="user in $data"
+                  ng-click="user.$selected = !user.$selected; changeSelection(user)"
+                  ng-class="{'active': user.$selected}">
+                <td data-title="'Name'" sortable="'name'" filter="{ 'name': 'text' }">
+                  {{user.name}}
+                </td>
+                <td data-title="'Age'" sortable="'age'" filter="{ 'age': 'text' }">
+                  {{user.age}}
+                </td>
+              </tr>
+            </table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+      </div>
+      <!-- /col -->
+
+
+
+    </div>
+    <!-- /row -->
+
+
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

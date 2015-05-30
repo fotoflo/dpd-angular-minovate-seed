@@ -1,0 +1,185 @@
+<div class="page page-orders">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Shop</a>
+        </li>
+        <li>
+          <a ui-sref="app.shop.orders">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+      <!-- col -->
+      <div class="col-md-12">
+
+
+        <div class="alert alert-danger">
+          <strong>Note!</strong> This table have only demo purpose. Data are not loaded from database but from dummy json.
+        </div>
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Orders</strong> List</h1>
+            <ul class="controls">
+
+              <li><a href="javascipt:;"><i class="fa fa-plus mr-5"></i> New Order</a></li>
+
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href class="dropdown-toggle" dropdown-toggle>Tools <i class="fa fa-angle-down ml-5"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href>Export to XLS</a>
+                  </li>
+                  <li>
+                    <a href>Export to CSV</a>
+                  </li>
+                  <li>
+                    <a href>Export to XML</a>
+                  </li>
+                  <li role="presentation" class="divider"></li>
+                  <li>
+                    <a href>Print Invoices</a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="OrdersTableCtrl as showCase">
+            <div class="table-responsive-wide">
+              <table datatable="ng" dt-options="showCase.dtOptions" dt-column-defs="showCase.dtColumnDefs" class="table table-striped table-hover table-custom" style="min-width: 1000px;">
+                <thead>
+                  <tr>
+                    <th style="width:40px;">
+                      <label class="checkbox checkbox-custom checkbox-custom-sm m-0">
+                        <input type="checkbox" ng-model="showCase.selectedAll" ng-click="showCase.selectAll()"><i></i>
+                      </label>
+                    </th>
+                    <th style="width:80px;">Order ID</th>
+                    <th style="width:120px;">Date</th>
+                    <th style="width:180px;">Placed By</th>
+                    <th style="width:80px;">Status</th>
+                    <th>Ship To</th>
+                    <th style="width:90px;">Quantity</th>
+                    <th style="width:100px;">Total</th>
+                    <th style="width:150px;">Actions</th>
+                  </tr>
+                  </thead>
+                  <tfoot>
+                  <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Placed By</th>
+                    <th>Status</th>
+                    <th>Ship To</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                  </tr>
+                  </tfoot>
+                  <tbody>
+                  <tr ng-repeat="order in showCase.orders">
+                    <td><label class="checkbox checkbox-custom checkbox-custom-sm m-0"><input type="checkbox" ng-model="order.selected"><i></i></label></td>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.date | date:'mediumDate'}}</td>
+                    <td>{{ order.placedby }}</td>
+                    <td><span class="label" ng-class="{'bg-success' : order.status == 'sent','bg-warning' : order.status == 'closed','bg-lightred' : order.status == 'cancelled','bg-primary' : order.status == 'pending'}">{{ order.status }}</span></td>
+                    <td>{{ order.shipto }}</td>
+                    <td>{{ order.quantity }}</td>
+                    <td>{{ order.total | currency}}</td>
+                    <td>
+                      <a ui-sref="app.shop.single-order" class="btn btn-xs btn-default"><i class="fa fa-search"></i> View</a>
+                      <a href="javascript:;" class="btn btn-xs btn-lightred"><i class="fa fa-times"></i> Delete</a>
+                    </td>
+                  </tr>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+      </div>
+      <!-- /col -->
+    </div>
+    <!-- /row -->
+
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

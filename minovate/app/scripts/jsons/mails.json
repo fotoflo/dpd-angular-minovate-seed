@@ -1,0 +1,317 @@
+[
+  {
+    "id": 0,
+    "subject": "Eu deserunt cillum",
+    "name": "Wood Walton",
+    "company": "Orbaxter",
+    "from": "woodwalton@orbaxter.com",
+    "avatar": "images/random-avatar1.jpg",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Commodo sunt minim incididunt ipsum dolore veniam nulla Lorem reprehenderit officia. Ut esse cillum quis deserunt.",
+    "attach":[
+      {"name":"att1.jpg", "url":"images/att1.jpg"},
+      {"name":"att2.jpg", "url":"images/att2.jpg"}
+    ],
+    "date": "16:54, 24.11.2014",
+    "label": {
+      "name": "family",
+      "color": "primary"
+    },
+    "starred": false,
+    "selected": false
+  },
+  {
+    "id": 1,
+    "subject": "Et est aliqua",
+    "name": "Ina Stevenson",
+    "company": "Quiltigen",
+    "from": "inastevenson@quiltigen.com",
+    "avatar": "images/random-avatar2.jpg",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Sit nulla sint ex exercitation culpa anim aliquip. Incididunt magna magna aute adipisicing incididunt ullamco sint velit quis irure cillum.",
+    "date": "15:29, 24.11.2014",
+    "label": {
+      "name": "work",
+      "color": "default"
+    },
+    "starred": true,
+    "selected": false
+  },
+  {
+    "id": 2,
+    "subject": "Fugiat irure id",
+    "name": "Randolph Hopper",
+    "company": "Powernet",
+    "from": "randolphhopper@powernet.com",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Cillum pariatur ex ut Lorem deserunt laborum sunt duis. Et minim exercitation consequat ex sint dolore.",
+    "date": "14:18, 24.11.2014",
+    "label": {
+      "name": "themeforest",
+      "color": "greensea"
+    },
+    "starred": true,
+    "selected": false
+  },
+  {
+    "id": 3,
+    "subject": "Ea velit labore",
+    "name": "Effie Wilkinson",
+    "company": "Bitendrex",
+    "from": "effiewilkinson@bitendrex.com",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Nulla velit commodo ea elit aute fugiat. Laboris id tempor cupidatat ullamco irure labore ad consectetur elit laborum laborum eiusmod fugiat.",
+    "attach":[
+      {"name":"att3.jpg", "url":"images/att3.jpg"},
+      {"name":"att4.jpg", "url":"images/att4.jpg"}
+    ],
+    "date": "14:05, 24.11.2014",
+    "label": {
+      "name": "shop",
+      "color": "orange"
+    },
+    "starred": false,
+    "selected": false
+  },
+  {
+    "id": 4,
+    "subject": "Laborum ullamco culpa",
+    "name": "Greta Ortega",
+    "company": "Cubix",
+    "from": "gretaortega@cubix.com",
+    "avatar": "images/random-avatar3.jpg",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Voluptate proident ullamco labore veniam non velit. Ad ut laborum qui fugiat esse est incididunt cillum.",
+    "date": "12:56, 24.11.2014",
+    "label": {
+      "name": "family",
+      "color": "primary"
+    },
+    "starred": false,
+    "selected": false
+  },
+  {
+    "id": 5,
+    "subject": "Pariatur nostrud cupidatat",
+    "name": "Lessie Nguyen",
+    "company": "Enersave",
+    "from": "lessienguyen@enersave.com",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Magna veniam quis laboris adipisicing anim deserunt nulla dolor commodo dolor. Dolore laboris consectetur sit duis sunt aliquip cupidatat aliqua ipsum ea ad irure.",
+    "date": "10:18, 24.11.2014",
+    "label": {
+      "name": "themeforest",
+      "color": "greensea"
+    },
+    "starred": false,
+    "selected": false
+  },
+  {
+    "id": 6,
+    "subject": "Ex officia laborum",
+    "name": "Boyd Frost",
+    "company": "Glukgluk",
+    "from": "boydfrost@glukgluk.com",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Eiusmod ipsum dolor laboris pariatur laborum non eu tempor id pariatur sit. In eu amet aute pariatur aliquip adipisicing qui amet reprehenderit et ut consectetur reprehenderit.",
+    "date": "06:48, 24.11.2014",
+    "label": {
+      "name": "google",
+      "color": "lightred"
+    },
+    "starred": false,
+    "selected": false
+  },
+  {
+    "id": 7,
+    "subject": "Consectetur sint ut",
+    "name": "Lorraine Mclaughlin",
+    "company": "Extro",
+    "from": "lorrainemclaughlin@extro.com",
+    "avatar": "images/random-avatar4.jpg",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Officia enim elit culpa irure fugiat nostrud incididunt magna cillum veniam labore sit id nulla. Sunt tempor irure aute consectetur id culpa qui fugiat culpa esse proident ad mollit dolor.",
+    "date": "20:16, 23.11.2014",
+    "label": {
+      "name": "work",
+      "color": "default"
+    },
+    "starred": true,
+    "selected": false
+  },
+  {
+    "id": 8,
+    "subject": "Deserunt in non",
+    "name": "Cooley Pruitt",
+    "company": "Skyplex",
+    "from": "cooleypruitt@skyplex.com",
+    "avatar": "images/random-avatar5.jpg",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Consectetur aute tempor do id sint. Et aute do cillum mollit adipisicing esse ex sint sit duis quis laboris voluptate proident.",
+    "attach":[
+      {"name":"att5.jpg", "url":"images/att5.jpg"},
+      {"name":"att6.jpg", "url":"images/att6.jpg"}
+    ],
+    "date": "19:36, 23.11.2014",
+    "label": {
+      "name": "work",
+      "color": "default"
+    },
+    "starred": false,
+    "selected": false
+  },
+  {
+    "id": 9,
+    "subject": "Irure consectetur culpa",
+    "name": "James Mccullough",
+    "company": "Slambda",
+    "from": "jamesmccullough@slambda.com",
+    "avatar": "images/random-avatar6.jpg",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Ex nisi qui ea irure ad et fugiat nisi. Commodo aliqua aute occaecat culpa dolor aliquip cillum ad cillum velit sint do ut.",
+    "date": "19:01, 23.11.2014",
+    "label": {
+      "name": "family",
+      "color": "primary"
+    },
+    "starred": false,
+    "selected": false
+  },
+  {
+    "id": 10,
+    "subject": "Elit voluptate minim",
+    "name": "Neal Macdonald",
+    "company": "Earthpure",
+    "from": "nealmacdonald@earthpure.com",
+    "avatar": "images/random-avatar7.jpg",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Consequat nulla excepteur velit laborum nisi voluptate magna ea consectetur aliqua cillum. Commodo labore velit commodo quis quis enim dolor cupidatat do ad non qui.",
+    "date": "18:30, 23.11.2014",
+    "label": {
+      "name": "work",
+      "color": "default"
+    },
+    "starred": false,
+    "selected": false
+  },
+  {
+    "id": 11,
+    "subject": "Ullamco quis qui",
+    "name": "Wells Wilder",
+    "company": "Shepard",
+    "from": "wellswilder@shepard.com",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Laboris ea enim laboris exercitation culpa velit ex. Nulla esse commodo non sunt excepteur eu proident exercitation.",
+    "date": "16:54, 23.11.2014",
+    "label": {
+      "name": "themeforest",
+      "color": "greensea"
+    },
+    "starred": false,
+    "selected": false
+  },
+  {
+    "id": 12,
+    "subject": "Voluptate amet fugiat",
+    "name": "Lloyd Carlson",
+    "company": "Photobin",
+    "from": "lloydcarlson@photobin.com",
+    "avatar": "images/random-avatar8.jpg",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Ullamco ut ullamco aute officia. In mollit fugiat nisi laboris non voluptate eiusmod commodo in.",
+    "date": "14:45, 23.11.2014",
+    "label": {
+      "name": "family",
+      "color": "primary"
+    },
+    "starred": true,
+    "selected": false
+  },
+  {
+    "id": 13,
+    "subject": "Cillum nostrud non",
+    "name": "Rosa Dotson",
+    "company": "Aquafire",
+    "from": "rosadotson@aquafire.com",
+    "avatar": "images/ici-avatar.jpg",
+    "to": [
+      {
+        "name": "Pedro",
+        "email": "perdo.sul@gmail.com"
+      }
+    ],
+    "content": "Velit eiusmod ut cupidatat occaecat proident consectetur velit deserunt Lorem ipsum mollit ipsum. Exercitation enim mollit non ad dolor consequat.",
+    "date": "13:15, 23.11.2014",
+    "label": {
+      "name": "work",
+      "color": "default"
+    },
+    "starred": false,
+    "selected": false
+  }
+]

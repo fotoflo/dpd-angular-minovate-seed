@@ -1,0 +1,65 @@
+<!-- right side header -->
+<div class="p-15 bg-white b-b">
+
+  <div class="btn-group pull-right">
+    <button type="button" class="btn btn-default btn-sm br-2-l"><i class="fa fa-angle-left"></i></button>
+    <button type="button" class="btn btn-default btn-sm br-2-r"><i class="fa fa-angle-right"></i></button>
+  </div>
+  <div class="btn-toolbar">
+    <div class="btn-group mr-10">
+      <label class="checkbox checkbox-custom m-0 mt-5"><input type="checkbox" ng-model="selectedAll" ng-click="selectAll()"><i></i> Select All</label>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-default btn-sm br-2"><i class="fa fa-refresh"></i></button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-default btn-sm br-2">More <span class="caret"></span></button>
+    </div>
+  </div>
+
+</div>
+<!-- /right side header -->
+
+
+
+
+
+
+
+<!-- right side body -->
+<div>
+
+  <!-- mails -->
+  <ul class="list-group no-radius no-border" id="mails-list">
+    <li ng-repeat="mail in mails" class="list-group-item b-{{mail.label.color}}">
+
+      <div class="media">
+        <div class="pull-left">
+          <div class="controls">
+            <a href="javascript:;" ng-click="mail.starred = !mail.starred" class="favourite text-orange"><i class="fa fa-star-o" ng-show="!mail.starred"></i><i class="fa fa-star" ng-show="mail.starred"></i></a>
+            <label class="checkbox checkbox-custom checkbox-custom-sm m-0 mail-select"><input type="checkbox" ng-model="mail.selected"><i></i></label>
+          </div>
+          <div class="thumb thumb-sm">
+            <img ng-src="{{mail.avatar}}" class="img-circle" ng-show="mail.avatar">
+            <div class="img-circle bg-{{mail.label.color}}" ng-show="!mail.avatar">{{mail.from | limitTo:1}}</div>
+          </div>
+        </div>
+        <div class="media-body">
+          <div class="media-heading m-0">
+            <a ui-sref="app.mail.single({mailId:mail.id})" class="mr-5">{{mail.subject}}</a><span class="label bg-{{mail.label.color}}">{{mail.label.name}}</span>
+            <span class="pull-right text-sm text-muted">
+              <span class="hidden-xs">{{ mail.date }}</span>
+              <i class="fa fa-paperclip ml-5" ng-show="mail.attach"></i>
+            </span>
+          </div>
+          <small>{{mail.content | limitTo:150}}</small>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+  <!-- / mails -->
+
+</div>
+<!-- /right side body -->
+

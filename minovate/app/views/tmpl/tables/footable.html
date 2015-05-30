@@ -1,0 +1,137 @@
+<div class="page page-footable">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Tables</a>
+        </li>
+        <li>
+          <a ui-sref="app.tables.footable">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+      <!-- col -->
+      <div class="col-md-12">
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Footable</strong> Example</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+            <div class="form-group">
+              <label for="filter" style="padding-top: 5px">Search:</label>
+              <input id="filter" type="text" class="form-control input-sm w-sm mb-10 inline-block"/>
+            </div>
+
+            <table id="searchTextResults" ui-jq="footable" data-filter="#filter" data-page-size="5" class="footable table table-custom">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th data-hide="phone">Username</th>
+                <th data-hide='phone, tablet'>Phone</th>
+                <th data-hide='phone, tablet'>Email</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr ng-repeat="user in users | filter:searchText" my-directive>
+                <td>{{user.name}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.email}}</td>
+              </tr>
+            </tbody>
+            <tfoot class="hide-if-no-paging">
+              <tr>
+                <td colspan="5" class="text-center">
+                  <ul class="pagination"></ul>
+                </td>
+              </tr>
+            </tfoot>
+            </table>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+      </div>
+      <!-- /col -->
+    </div>
+    <!-- /row -->
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

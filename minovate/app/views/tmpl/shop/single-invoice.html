@@ -1,0 +1,634 @@
+<div class="page page-single-invoice">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Shop</a>
+        </li>
+        <li>
+          <a ui-sref="app.shop.single-invoice">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+
+    <div class="add-nav">
+      <div class="nav-heading">
+        <h3>Invoice Details : <strong class="text-greensea">#2015000152</strong></h3>
+        <span class="controls pull-right">
+          <a ui-sref="app.shop.invoices" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20 mr-5" tooltip="Back"><i class="fa fa-times"></i></a>
+          <a href="javascript:;" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20 mr-5" tooltip="Send"><i class="fa fa-envelope"></i></a>
+          <a href="javascript:window.print()" class="btn btn-ef btn-ef-1 btn-ef-1-default btn-ef-1a btn-rounded-20" tooltip="Print"><i class="fa fa-print"></i></a>
+        </span>
+      </div>
+      <tabset>
+
+
+
+
+
+
+
+
+        <tab heading="Details">
+
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-md-12">
+
+
+              <!-- tile -->
+              <section class="tile time-simple">
+
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+
+                  <!-- row -->
+                  <div class="row">
+
+                    <!-- col -->
+                    <div class="col-md-9">
+                      <a href="http://www.logoinstant.com" target="_blank" title="Free Logo"><img src="images/logo-placeholder.jpg" alt="" class="thumb thumb-xl m-10 mb-20"></a>
+                    </div>
+                    <!-- /col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                      <h3 class="mb-0 text-custom text-strong">#2015000152 / 26 Jan, 2015</h3>
+                      <p class="text-default lt">Order ID: #365116</p>
+                    </div>
+                    <!-- /col -->
+
+                  </div>
+                  <!-- /row -->
+
+                  <!-- row -->
+                  <div class="row b-t pt-20">
+
+                    <!-- col -->
+                    <div class="col-md-4 b-r">
+                      <p class="text-uppercase text-strong mb-10 custom-font">
+                        From
+                        <a href="javascript:;" class="btn btn-default btn-rounded-20 btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                      </p>
+
+                      <ul class="list-unstyled text-default lt mb-20">
+                        <li>Minovate inc.</li>
+                        <li>Slobodarska 59</li>
+                        <li>Kosice, Kosice 1</li>
+                        <li>129 95</li>
+                      </ul>
+
+                    </div>
+                    <!-- /col -->
+
+                    <!-- col -->
+                    <div class="col-md-4 b-r">
+                      <p class="text-uppercase text-strong mb-10 custom-font">
+                        To
+                        <a href="javascript:;" class="btn btn-default btn-rounded-20 btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                      </p>
+                      <ul class="list-unstyled text-default lt mb-20">
+                        <li>John Douey</li>
+                        <li>Vajnorska 512</li>
+                        <li>Bratislava, Bratislava 1</li>
+                        <li>811 09</li>
+                      </ul>
+                    </div>
+                    <!-- /col -->
+
+                    <!-- col -->
+                    <div class="col-md-4">
+                      <p class="text-uppercase text-strong mb-10 custom-font">Payment Details</p>
+                      <ul class="list-unstyled text-default lt mb-20">
+                        <li><strong>VAT #:</strong> EU33545115</li>
+                        <li><strong>Account Name:</strong> Minovate Inc.</li>
+                        <li><strong>IBAN Code:</strong> SK2109000000001234567890</li>
+                        <li><strong>Swift Code:</strong> BREXSKBX</li>
+
+                      </ul>
+                    </div>
+                    <!-- /col -->
+
+                  </div>
+                  <!-- /row -->
+
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+
+
+              <!-- tile -->
+              <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body p-0">
+
+                  <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Description</th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Discount %</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><a href="javascript:;">0000156</a></td>
+                          <td>Onions</td>
+                          <td>just onions</td>
+                          <td>{{ 1.56 | currency }}</td>
+                          <td>3/kg</td>
+                          <td>5%</td>
+                          <td>{{ (1.56*3) - (1.56*3)*0.05 | currency }}</td>
+                        </tr>
+                        <tr>
+                          <td><a href="javascript:;">0496116</a></td>
+                          <td>Peppers</td>
+                          <td>just peppers</td>
+                          <td>{{ 2.29 | currency }}</td>
+                          <td>5/kg</td>
+                          <td>8%</td>
+                          <td>{{ (2.29*5) - (2.29*5)*0.08 | currency }}</td>
+                        </tr>
+                        <tr>
+                          <td><a href="javascript:;">9611159</a></td>
+                          <td>Carrots</td>
+                          <td>just carrots</td>
+                          <td>{{ 0.99 | currency }}</td>
+                          <td>1/kg</td>
+                          <td>20%</td>
+                          <td>{{ (0.99*1) - (0.99*1)*0.2 | currency }}</td>
+                        </tr>
+                        <tr>
+                          <td><a href="javascript:;">6621148</a></td>
+                          <td>Apples</td>
+                          <td>just apples</td>
+                          <td>{{ 3.90 | currency }}</td>
+                          <td>18/kg</td>
+                          <td>33%</td>
+                          <td>{{ (3.90*18) - (3.90*18)*0.33 | currency }}</td>
+                        </tr>
+                        <tr>
+                          <td><a href="javascript:;">9621485</a></td>
+                          <td>Lemons</td>
+                          <td>just lemons</td>
+                          <td>{{ 4.20 | currency }}</td>
+                          <td>2/kg</td>
+                          <td>18%</td>
+                          <td>{{ (4.20*2) - (4.20*2)*0.18 | currency }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+
+
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-md-3 col-md-offset-9 price-total">
+
+              <!-- tile -->
+              <section class="tile tile-simple bg-tr-black lter">
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                  <ul class="list-unstyled">
+                      <li><strong class="inline-block w-sm mb-5">Subtotal:</strong> {{865.21 | currency}}</li>
+                      <li><strong class="inline-block w-sm mb-5">Shipping:</strong> {{25 | currency}}</li>
+                      <li><strong class="inline-block w-sm mb-5">Grand Total:</strong> {{865.21 + 25 | currency}}</li>
+                      <li><strong class="inline-block w-sm mb-5">Total Paid:</strong> {{865.21 + 25 | currency}}</li>
+                      <li><strong class="inline-block w-sm mb-5">Total Refunded:</strong> {{0 | currency}}</li>
+                      <li><strong class="inline-block w-sm">Total Due:</strong> <h3 class="inline-block text-success">{{865.21 + 25 | currency}}</h3></li>
+                    </ul>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+
+
+
+        </tab>
+
+
+
+
+
+
+
+
+
+        <tab heading="Notes">
+
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-md-3">
+
+              <!-- tile -->
+              <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                  <header class="mb-20">
+                    <span class="text-sm text-default lt">Created at: 26 Jan, 2015</span>
+                    <span class="pull-right text-sm text-default lt">ID: 266946</span>
+                  </header>
+
+                  <h4 class="mt-10">This is Note</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="col-md-3">
+
+              <!-- tile -->
+              <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                  <header class="mb-20">
+                    <span class="text-sm text-default lt">Created at: 26 Jan, 2015</span>
+                    <span class="pull-right text-sm text-default lt">ID: 266946</span>
+                  </header>
+
+                  <h4 class="mt-10">This is Note</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="col-md-3">
+
+              <!-- tile -->
+              <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                  <header class="mb-20">
+                    <span class="text-sm text-default lt">Created at: 26 Jan, 2015</span>
+                    <span class="pull-right text-sm text-default lt">ID: 266946</span>
+                  </header>
+
+                  <h4 class="mt-10">This is Note</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="col-md-3">
+
+              <!-- tile -->
+              <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                  <header class="mb-20">
+                    <span class="text-sm text-default lt">Created at: 26 Jan, 2015</span>
+                    <span class="pull-right text-sm text-default lt">ID: 266946</span>
+                  </header>
+
+                  <h4 class="mt-10">This is Note</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="col-md-3">
+
+              <!-- tile -->
+              <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                  <header class="mb-20">
+                    <span class="text-sm text-default lt">Created at: 26 Jan, 2015</span>
+                    <span class="pull-right text-sm text-default lt">ID: 266946</span>
+                  </header>
+
+                  <h4 class="mt-10">This is Note</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="col-md-3">
+
+              <!-- tile -->
+              <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                  <header class="mb-20">
+                    <span class="text-sm text-default lt">Created at: 26 Jan, 2015</span>
+                    <span class="pull-right text-sm text-default lt">ID: 266946</span>
+                  </header>
+
+                  <h4 class="mt-10">This is Note</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+            </div>
+            <!-- /col -->
+
+            <!-- col -->
+            <div class="col-md-3">
+
+              <!-- tile -->
+              <section class="tile tile-simple no-bg">
+
+                <!-- tile body -->
+                <div class="tile-body p-0">
+
+                  <a href="javascript:;" class="tile-button bg-white"><i class="fa fa-plus"></i> Add Note</a>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+            </div>
+            <!-- /col -->
+
+          </div>
+          <!-- /row -->
+
+
+
+        </tab>
+
+
+
+
+
+
+
+
+
+        <tab heading="History">
+
+
+
+
+          <!-- row -->
+          <div class="row">
+            <!-- col -->
+            <div class="col-md-12">
+
+
+              <!-- tile -->
+              <section class="tile time-simple">
+
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+
+                  <!-- row -->
+                  <div class="row">
+
+                    <!-- col -->
+                    <div class="col-md-9">
+                      <a href="http://www.logoinstant.com" target="_blank" title="Free Logo"><img src="images/logo-placeholder.jpg" alt="" class="thumb thumb-xl m-10 mb-20"></a>
+                    </div>
+                    <!-- /col -->
+
+                    <!-- col -->
+                    <div class="col-md-3">
+                      <h3 class="mb-0 text-custom text-strong">#2015000152 / 26 Jan, 2015</h3>
+                      <p class="text-default lt">Order ID: #365116</p>
+                    </div>
+                    <!-- /col -->
+
+                  </div>
+                  <!-- /row -->
+
+                  <!-- row -->
+                  <div class="row b-t pt-20">
+
+                    <!-- col -->
+                    <div class="col-md-4 b-r">
+                      <p class="text-uppercase text-strong mb-10 custom-font">
+                        From
+                        <a href="javascript:;" class="btn btn-default btn-rounded-20 btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                      </p>
+
+                      <ul class="list-unstyled text-default lt mb-20">
+                        <li>Minovate inc.</li>
+                        <li>Slobodarska 59</li>
+                        <li>Kosice, Kosice 1</li>
+                        <li>129 95</li>
+                      </ul>
+
+                    </div>
+                    <!-- /col -->
+
+                    <!-- col -->
+                    <div class="col-md-4 b-r">
+                      <p class="text-uppercase text-strong mb-10 custom-font">
+                        To
+                        <a href="javascript:;" class="btn btn-default btn-rounded-20 btn-xs pull-right"><i class="fa fa-pencil"></i></a>
+                      </p>
+                      <ul class="list-unstyled text-default lt mb-20">
+                        <li>John Douey</li>
+                        <li>Vajnorska 512</li>
+                        <li>Bratislava, Bratislava 1</li>
+                        <li>811 09</li>
+                      </ul>
+                    </div>
+                    <!-- /col -->
+
+                    <!-- col -->
+                    <div class="col-md-4">
+                      <p class="text-uppercase text-strong mb-10 custom-font">Payment Details</p>
+                      <ul class="list-unstyled text-default lt mb-20">
+                        <li><strong>VAT #:</strong> EU33545115</li>
+                        <li><strong>Account Name:</strong> Minovate Inc.</li>
+                        <li><strong>IBAN Code:</strong> SK2109000000001234567890</li>
+                        <li><strong>Swift Code:</strong> BREXSKBX</li>
+
+                      </ul>
+                    </div>
+                    <!-- /col -->
+
+                  </div>
+                  <!-- /row -->
+
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+
+
+              <!-- tile -->
+              <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body p-0">
+
+                  <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                      <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Desription</th>
+                        <th>Date</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td><a href="javascript:;">1</a></td>
+                        <td>Invoice Created</td>
+                        <td>Jan 20, 2015</td>
+                      </tr>
+                      <tr>
+                        <td><a href="javascript:;">2</a></td>
+                        <td>Invoice Sent</td>
+                        <td>Jan 20, 2015</td>
+                      </tr>
+                      <tr>
+                        <td><a href="javascript:;">3</a></td>
+                        <td>Invoice Paid</td>
+                        <td>Jan 21, 2015</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+                <!-- /tile body -->
+
+              </section>
+              <!-- /tile -->
+
+
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+
+
+
+
+        </tab>
+
+
+
+
+
+
+
+
+
+      </tabset>
+    </div>
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

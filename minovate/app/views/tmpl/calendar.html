@@ -1,0 +1,71 @@
+<div class="page page-full page-calendar">
+
+
+  <div class="tbox tbox-sm">
+
+
+    <div class="tcol w-lg bg-tr-white lt b-r">
+
+      <div class="p-15 bg-white">
+        <button type="button" class="btn btn-greensea btn-xs mb-10 pull-right b-0" ng-click="addEvent()" tooltip="Doule-click to calendar day to add event" tooltip-placement="bottom"><i class="fa fa-plus"></i></button>
+        <h4 class="custom-font text-default m-0">Events</h4>
+      </div>
+
+      <div class="p-15">
+
+        <div ng-repeat="e in events" class="p-10 mb-10 event-control {{e.className[0]}}">
+          <input ng-model="e.title" class="form-control input-sm input-unstyled">
+          <a class="pull-right text-muted event-remove" ng-click="remove($index)"><i class="fa fa-trash-o"></i></a>
+          <div class="text-xs text-muted">{{e.start | date:"MMM dd"}} - {{e.end | date:"MMM dd"}}</div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="tcol">
+      <div class="p-15 bg-white">
+
+        <div class="pull-right">
+
+          <button type="button" class="btn btn-sm btn-default" ng-click="today()">today</button>
+
+          <div class="btn-group">
+            <button class="btn btn-default btn-sm" ng-click="changeView('agendaDay', 'myCalendar1')">Day</button>
+            <button class="btn btn-default btn-sm" ng-click="changeView('agendaWeek', 'myCalendar1')">Week</button>
+            <button class="btn btn-default btn-sm" ng-click="changeView('month', 'myCalendar1')">Month</button>
+          </div>
+
+        </div>
+
+        <h4 class="custom-font text-default m-0">Calendar</h4>
+
+      </div>
+
+      <div class="p-15">
+
+        <div class="fc-overlay">
+          <div class="panel b-solid">
+            <h4 class="text-light mt-0">{{event.title}}</h4>
+            <div class="b-b b-solid mb-10"></div>
+            <div class="text-muted"><i class="icon-calendar mr-5"></i> {{event.start | date:'medium'}}</div>
+            <div class="text-muted" ng-show='event.end'><i class="icon-clock mr-5"></i> {{event.end | date:'medium'}}</div>
+            <div class="text-muted" ng-show='event.location'><i class="icon-pointer mr-5"></i> {{event.location}}</div>
+            <div class="mt-10">{{event.info}}</div>
+            <div class="mt-10">{{event.url}}</div>
+          </div>
+        </div>
+
+        <div class="calendar" ng-model="eventSources" calendar="myCalendar1" ui-calendar="uiConfig.calendar"></div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+

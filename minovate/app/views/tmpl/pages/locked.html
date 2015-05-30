@@ -1,0 +1,38 @@
+<div class="page page-core page-login">
+
+  <div class="text-center"><h3 class="text-light text-white"><span class="text-lightred">M</span>INOVATE</h3></div>
+
+  <div class="container w-420 p-15 bg-white mt-40">
+
+    <div class="bg-slategray lt wrap-reset mb-20 text-center">
+      <h2 class="text-light text-greensea m-0">Locked</h2>
+    </div>
+
+    <div class="media p-15">
+      <div class="pull-left thumb thumb-lg mr-20">
+        <img class="media-object img-circle" src="images/ici-avatar.jpg" alt="">
+      </div>
+      <div class="media-body">
+
+        <form name="form" class="form-validation" novalidate>
+          <h4 class="media-heading mb-0">Ing. Imrich <strong>Kamarel</strong></h4>
+          <div class="form-group mt-10">
+            <input type="password" placeholder="Password" class="form-control underline-input" ng-model="user.password" required>
+          </div>
+          <div class="form-group text-left">
+            <a ui-sref="app.dashboard" class="btn btn-greensea b-0 br-2 mr-5 block" ng-disabled='form.$invalid'>Login</a>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="bg-slategray lt wrap-reset mt-0 text-center">
+      <p class="m-0">
+				<a ui-sref="core.login">Not you?</a>
+			</p>
+    </div>
+
+  </div>
+
+</div>

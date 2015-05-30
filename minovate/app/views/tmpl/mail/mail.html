@@ -1,0 +1,89 @@
+<div class="page page-full page-mail">
+
+
+  <div class="tbox tbox-sm">
+
+
+
+
+
+
+    <!-- left side -->
+    <div class="tcol w-md bg-tr-white lt b-r">
+
+
+
+
+
+
+
+
+      <!-- left side header-->
+      <div class="p-15 bg-white" style="min-height: 61px">
+
+        <button class="btn btn-sm btn-default pull-right visible-sm visible-xs" active-toggle target="#mail-nav"><i class="fa fa-bars"></i></button>
+        <a ui-sref="app.mail.compose" class="btn btn-sm btn-lightred b-0 br-2 text-strong">Compose</a>
+
+      </div>
+      <!-- /left side header -->
+
+
+
+
+
+
+
+
+      <!-- left side body -->
+      <div class="p-15 hidden-sm hidden-xs" id="mail-nav">
+
+        <ul class="nav nav-pills nav-stacked nav-sm" id="mail-folders">
+          <li ui-sref-active="active"><a ui-sref="app.mail.inbox">Inbox <span class="pull-right badge bg-lightred">6</span></a></li>
+          <li><a href="javascript:;">Sent</a></li>
+          <li><a href="javascript:;">Draft</a></li>
+          <li><a href="javascript:;">Trash</a></li>
+          <li><a href="javascript:;">Important</a></li>
+          <li><a href="javascript:;">Starred</a></li>
+        </ul>
+
+        <h5 class="b-b p-10 text-strong">Labels</h5>
+        <ul class="nav nav-pills nav-stacked nav-sm" id="mail-labels">
+          <li><a href="javascript:;"><i class="fa fa-fw fa-circle text-primary"></i>Family</a></li>
+          <li><a href="javascript:;"><i class="fa fa-fw fa-circle text-default"></i>Work</a></li>
+          <li><a href="javascript:;"><i class="fa fa-fw fa-circle text-orange"></i>Shop</a></li>
+          <li><a href="javascript:;"><i class="fa fa-fw fa-circle text-greensea"></i>Themeforest</a></li>
+          <li><a href="javascript:;"><i class="fa fa-fw fa-circle text-lightred"></i>Google</a></li>
+        </ul>
+
+
+      </div>
+      <!-- /left side body -->
+
+
+
+
+
+
+
+
+    </div>
+    <!-- /left side -->
+
+
+
+
+
+
+
+    <!-- right side -->
+    <div class="tcol">
+      <div ui-view ></div>
+    </div>
+    <!-- /right side -->
+
+  </div>
+
+
+
+</div>
+

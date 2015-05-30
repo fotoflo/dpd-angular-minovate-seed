@@ -1,0 +1,1123 @@
+<div class="page page-general">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">UI Kit</a>
+        </li>
+        <li>
+          <a ui-sref="app.ui.general">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01" ng-controller="ProgressDemoCtrl">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Progress</strong> Bars</h1>
+            <ul class="controls">
+
+              <li><a href="" ng-click="random()">Randomize</a></li>
+
+              <li><a href="" ng-click="randomStacked()">Stacked</a></li>
+
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+            <h4 class="custom-font"><strong>Static</strong> Bars</h4>
+            <progressbar class="progress-xxs" value="55" type="cyan"></progressbar>
+            <progressbar class="progress-xs not-rounded" value="36" type="greensea"></progressbar>
+            <progressbar class="progress-sm not-rounded" value="69">69%</progressbar>
+            <progressbar class="progress-striped not-rounded" value="22" type="warning">22%</progressbar>
+            <progressbar class="progress-striped active not-rounded" max="200" value="166" type="danger"><b>166 / 200</b></progressbar>
+            <div class="progress-list">
+              <div class="details">
+                <div class="title"><strong>Value</strong> in container</div>
+                <div class="description">animated progress bar load</div>
+              </div>
+              <div class="status pull-right">
+                <span>50</span>%
+              </div>
+              <div class="clearfix"></div>
+              <progressbar class="progress-striped active not-rounded" value="50" type="dutch"><b>50%</b></progressbar>
+            </div>
+
+            <hr/>
+
+            <h4 class="custom-font"><strong>Dynamic</strong> Bars</h4>
+            <progressbar class="progress-sm" max="max" value="dynamic" type="drank"><span style="color:black; white-space:nowrap;">{{dynamic}} / {{max}}</span></progressbar>
+
+            <small><em>No animation</em></small>
+            <progressbar animate="false" value="dynamic" type="hotpink"><b>{{dynamic}}%</b></progressbar>
+
+            <small><em>Object (changes type based on value)</em></small>
+            <progressbar class="progress-striped active" value="dynamic" type="{{type}}">{{type}} <i ng-show="showWarning">!!! Watch out !!!</i></progressbar>
+
+            <hr/>
+
+            <h4 class="custom-font"><strong>Stacked</strong> Bar</h4>
+            <progress><bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}"><span ng-hide="bar.value < 5">{{bar.value}}%</span></bar></progress>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen04" ng-controller="CarouselDemoCtrl" set-ng-animate="false">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Carousel</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body p-0">
+
+            <carousel interval="myInterval">
+              <slide ng-repeat="slide in slides" active="slide.active">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+                <div class="carousel-caption">
+                  <h4>Slide {{$index}}</h4>
+                  <p>{{slide.text}}</p>
+                </div>
+              </slide>
+            </carousel>
+
+          </div>
+          <!-- /tile body -->
+
+          <!-- tile footer -->
+          <div class="tile-footer">
+
+            <!-- row -->
+            <div class="row">
+              <!-- col -->
+              <div class="col-md-4">
+                 <button type="button" class="btn btn-default" ng-click="addSlide()">Add Slide</button>
+              </div>
+              <!-- /col -->
+              <!-- col -->
+              <div class="col-md-8 text-right text-left-sm">
+                <form class="form-inline" role="form">
+                  <div class="form-group">
+                    <label for="interval">Interval: </label>
+                    <input type="number" class="form-control w-sm" id="interval" placeholder="Enter interval" ng-model="myInterval"> ms
+                    <span class="help-block">Enter a negative number to stop the interval.</span>
+                  </div>
+                </form>
+              </div>
+              <!-- /col -->
+            </div>
+            <!-- /row -->
+
+
+          </div>
+          <!-- /tile footer -->
+
+
+        </section>
+        <!-- /tile -->
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen06">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Collapse</strong></h1>
+            <ul class="controls">
+              <li><a href ng-init="isCollapsed = false" ng-click="isCollapsed = !isCollapsed">Toggle Collapse</a></li>
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen06 = !isFullscreen06">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" collapse="isCollapsed">
+            <p>Collapsing content</p>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen08">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Dropdown</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen08 = !isFullscreen08">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="DropdownCtrl">
+
+            <!-- Simple dropdown -->
+            <span class="dropdown" dropdown on-toggle="toggled(open)">
+              <a href class="dropdown-toggle" dropdown-toggle>
+                Click me for a dropdown, yo!
+              </a>
+              <ul class="dropdown-menu">
+                <li ng-repeat="choice in items">
+                  <a href>{{choice}}</a>
+                </li>
+              </ul>
+            </span>
+
+            <!-- Single button -->
+            <div class="btn-group" dropdown is-open="status.isopen">
+              <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                Button dropdown <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <!-- Split button -->
+            <div class="btn-group" dropdown>
+              <button type="button" class="btn btn-danger">Action</button>
+              <button type="button" class="btn btn-danger dropdown-toggle" dropdown-toggle>
+                <span class="caret"></span>
+                <span class="sr-only">Split button!</span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+
+            <hr />
+
+            <p>
+              <button type="button" class="btn btn-default btn-sm" ng-click="toggleDropdown($event)">Toggle button dropdown</button>
+              <button type="button" class="btn btn-warning btn-sm" ng-click="disabled = !disabled">Enable/Disable</button>
+            </p>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen09">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Datepicker</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen09 = !isFullscreen09">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="DatepickerDemoCtrl">
+
+            <h4 class="custom-font">Inline</h4>
+            <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="datepicker well well-sm inline-block"></datepicker>
+
+            <pre class="alert alert-info mt-20">Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+            <!-- row -->
+            <div class="row">
+              <!-- col -->
+              <div class="col-md-6">
+                <label>Popup</label>
+                <p class="input-group">
+                  <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                  <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+                  </span>
+                </p>
+              </div>
+              <!-- /col -->
+
+              <!-- col -->
+              <div class="col-md-6">
+                <label>Format</label>
+                <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
+              </div>
+              <!-- /col -->
+
+            </div>
+            <!-- /row -->
+
+            <hr />
+            <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+            <button type="button" class="btn btn-sm btn-default" ng-click="dt = '2009-08-24'">2009-08-24</button>
+            <button type="button" class="btn btn-sm btn-default" ng-click="clear()">Clear</button>
+            <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" tooltip="After today restriction">Min date</button>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen12">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Popover</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen12 = !isFullscreen12">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="PopoverDemoCtrl">
+
+            <h4 class="custom-font">Dynamic</h4>
+            <div class="row">
+
+              <div class="form-group col-md-6">
+                <label>Popup Text:</label>
+                <input type="text" ng-model="dynamicPopover" class="form-control">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Popup Title:</label>
+                <input type="text" ng-model="dynamicPopoverTitle" class="form-control">
+              </div>
+
+            </div>
+
+            <button popover="{{dynamicPopover}}" popover-title="{{dynamicPopoverTitle}}" class="btn btn-default">Dynamic Popover</button>
+
+            <hr />
+
+            <h4 class="custom-font">Positional</h4>
+            <button popover-placement="top" popover="On the Top!" class="btn btn-sm btn-default">Top</button>
+            <button popover-placement="left" popover="On the Left!" class="btn btn-sm btn-default">Left</button>
+            <button popover-placement="right" popover="On the Right!" class="btn btn-sm btn-default">Right</button>
+            <button popover-placement="bottom" popover="On the Bottom!" class="btn btn-sm btn-default">Bottom</button>
+
+            <hr />
+            <h4 class="custom-font">Triggers</h4>
+
+            <!-- row -->
+            <div class="row">
+              <!-- col -->
+              <div class="col-md-6">
+                <button popover="I appeared on mouse enter!" popover-trigger="mouseenter" class="btn btn-default">Mouseenter</button>
+              </div>
+              <!-- /col -->
+              <!-- col -->
+              <div class="col-md-6">
+                <input type="text" value="Click me!" popover="I appeared on focus! Click away and I'll vanish..."  popover-trigger="focus" class="form-control">
+              </div>
+              <!-- /col -->
+            </div>
+            <!-- /row -->
+
+            <hr />
+            <h4 class="custom-font">Other</h4>
+            <button popover-animation="true" popover="I fade in and out!" class="btn btn-default">fading</button>
+            <button popover="I have a title!" popover-title="The title." class="btn btn-default">title</button>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+
+      </div>
+      <!-- /col -->
+
+
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen02">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Ratings</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="RatingDemoCtrl">
+
+            <h4 class="custom-font"><strong>Default</strong> Style</h4>
+            <rating ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+
+            <pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
+
+            <button class="btn btn-sm btn-danger" ng-click="rate = 0" ng-disabled="isReadonly">Clear</button>
+            <button class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Toggle Readonly</button>
+
+            <hr />
+
+            <h4 class="custom-font"><strong>Custom</strong> Icons</h4>
+            <div ng-init="x = 3" class="mb-10"><rating ng-model="x" max="5" state-on="'fa fa-star text-orange text-lg'" state-off="'fa fa-star-o text-lg'"></rating> <b>({{x}})</b></div>
+            <div ng-init="y = 10"><rating ng-model="y" max="15" state-on="'fa fa-bug text-cyan'" state-off="'fa fa-bug'"></rating> (<b>Bugs:</b> {{y}})</div>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen03">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Buttons</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="ButtonsCtrl">
+
+
+            <!-- row -->
+            <div class="row">
+
+
+              <!-- col -->
+              <div class="col-md-4">
+                <h5 class="custom-font">Single toggle</h5>
+                <pre>{{singleModel}}</pre>
+                <button type="button" class="btn btn-greensea" ng-model="singleModel" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+                  Single Toggle
+                </button>
+              </div>
+              <!-- /col -->
+
+
+              <!-- col -->
+              <div class="col-md-8">
+                <h5 class="custom-font">Checkbox</h5>
+                <pre>{{checkModel}}</pre>
+                <div class="btn-group">
+                  <label class="btn btn-cyan" ng-model="checkModel.left" btn-checkbox>Left</label>
+                  <label class="btn btn-cyan" ng-model="checkModel.middle" btn-checkbox>Middle</label>
+                  <label class="btn btn-cyan" ng-model="checkModel.right" btn-checkbox>Right</label>
+                </div>
+              </div>
+              <!-- /col -->
+
+
+
+
+            </div>
+            <!-- /row -->
+
+
+            <!-- row -->
+            <div class="row">
+
+
+              <!-- col -->
+              <div class="col-md-12">
+
+                <h5 class="custom-font">Radio &amp; Uncheckable Radio</h5>
+                <pre>{{radioModel || 'null'}}</pre>
+                <div class="btn-group">
+                  <label class="btn btn-drank" ng-model="radioModel" btn-radio="'Left'">Left</label>
+                  <label class="btn btn-drank" ng-model="radioModel" btn-radio="'Middle'">Middle</label>
+                  <label class="btn btn-drank" ng-model="radioModel" btn-radio="'Right'">Right</label>
+                </div>
+                <div class="btn-group">
+                  <label class="btn btn-green" ng-model="radioModel" btn-radio="'Left'" uncheckable>Left</label>
+                  <label class="btn btn-green" ng-model="radioModel" btn-radio="'Middle'" uncheckable>Middle</label>
+                  <label class="btn btn-green" ng-model="radioModel" btn-radio="'Right'" uncheckable>Right</label>
+                </div>
+
+              </div>
+              <!-- /col -->
+
+
+            </div>
+            <!-- /row -->
+
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen05">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Tooltip</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen05 = !isFullscreen05">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TooltipDemoCtrl">
+
+            <div class="form-group">
+              <label>Dynamic Tooltip Text</label>
+              <input type="text" ng-model="dynamicTooltipText" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Dynamic Tooltip Popup Text</label>
+              <input type="text" ng-model="dynamicTooltip" class="form-control">
+            </div>
+            <p>
+              Pellentesque <a href="#" tooltip="{{dynamicTooltip}}">{{dynamicTooltipText}}</a>,
+              sit amet venenatis urna cursus eget nunc scelerisque viverra mauris, in
+              aliquam. Tincidunt lobortis feugiat vivamus at
+              <a href="#" tooltip-placement="left" tooltip="On the Left!">left</a> eget
+              arcu dictum varius duis at consectetur lorem. Vitae elementum curabitur
+              <a href="#" tooltip-placement="right" tooltip="On the Right!">right</a>
+              nunc sed velit dignissim sodales ut eu sem integer vitae. Turpis egestas
+              <a href="#" tooltip-placement="bottom" tooltip="On the Bottom!">bottom</a>
+              pharetra convallis posuere morbi leo urna,
+              <a href="#" tooltip-animation="false" tooltip="I don't fade. :-(">fading</a>
+              at elementum eu, facilisis sed odio morbi quis commodo odio. In cursus
+              <a href="#" tooltip-popup-delay='1000' tooltip='appears with delay'>delayed</a> turpis massa tincidunt dui ut.
+            </p>
+
+            <p>
+              I can even contain HTML. <a href="#" tooltip-html-unsafe="{{htmlTooltip}}">Check me out!</a>
+            </p>
+
+            <form role="form">
+              <div class="form-group">
+                <label>Or use custom triggers, like focus: </label>
+                <input type="text" value="Click me!" tooltip="See? Now click away..."  tooltip-trigger="focus" tooltip-placement="top" class="form-control" />
+              </div>
+            </form>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen07">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Typeahead</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen07 = !isFullscreen07">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TypeaheadCtrl">
+
+            <script type="text/ng-template" id="customTemplate.html">
+              <a>
+                <img ng-src="http://upload.wikimedia.org/wikipedia/commons/thumb/{{match.model.flag}}" width="16">
+                <span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+              </a>
+            </script>
+
+            <h4 class="custom-font"><strong>Static</strong> arrays</h4>
+            <pre>Model: {{selected | json}}</pre>
+            <input type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+
+            <h4 class="custom-font"><strong>Asynchronous</strong> results</h4>
+            <pre>Model: {{asyncSelected | json}}</pre>
+            <input type="text" ng-model="asyncSelected" placeholder="Locations loaded via $http" typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" class="form-control">
+            <i ng-show="loadingLocations" class="fa fa-spin fa-refresh"></i>
+
+            <h4 class="custom-font"><strong>Custom templates</strong> for results</h4>
+            <pre>Model: {{customSelected | json}}</pre>
+            <input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control">
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen10">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Timepicker</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen10 = !isFullscreen10">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="TimepickerDemoCtrl">
+
+            <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+
+            <pre class="alert alert-info">Time is: {{mytime | date:'shortTime' }}</pre>
+
+            <!-- row -->
+            <div class="row">
+              <!-- col -->
+              <div class="col-md-6">
+                <label>Hours step is:</label>
+                <select class="form-control" ng-model="hstep" ng-options="opt for opt in options.hstep"></select>
+              </div>
+              <!-- /col -->
+
+              <!-- col -->
+              <div class="col-md-6">
+                <label>Minutes step is:</label>
+                <select class="form-control" ng-model="mstep" ng-options="opt for opt in options.mstep"></select>
+              </div>
+              <!-- /col -->
+
+            </div>
+            <!-- /row -->
+
+            <hr>
+
+            <button type="button" class="btn btn-sm btn-info" ng-click="toggleMode()" ng-model="timeMode" ng-init="timeMode = 0" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+              12H / 24H
+            </button>
+            <button class="btn btn-sm btn-default" ng-click="update()">Set to 14:00</button>
+            <button class="btn btn-sm btn-default" ng-click="clear()">Clear</button>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen11">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Pagination</strong></h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen11 = !isFullscreen11">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="PaginationDemoCtrl">
+
+            <h4 class="custom-font">Default</h4>
+            <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm mt-0 mb-10"></pagination>
+            <pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm mt-0 mb-10" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+            <pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage" class="mt-0 mb-10"></pagination>
+            <pagination direction-links="false" total-items="totalItems" ng-model="currentPage" num-pages="smallnumPages" class="mt-0 mb-10"></pagination>
+
+            <div>
+              <span class="mr-10">The selected page no: <strong>{{currentPage}}</strong></span>
+              <button class="btn btn-sm btn-default" ng-click="setPage(3)">Set current page to: 3</button>
+            </div>
+
+            <hr />
+            <h4 class="custom-font">Pager</h4>
+            <pager total-items="totalItems" ng-model="currentPage"></pager>
+
+            <hr />
+            <h4 class="custom-font"><strong>Limit the maximum</strong> visible buttons</h4>
+            <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true"></pagination>
+            <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+            <pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+      </div>
+      <!-- /col -->
+
+
+
+    </div>
+    <!-- /row -->
+
+
+    <!-- row -->
+    <div class="row">
+      <!-- col -->
+      <div class="col-md-12">
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen13">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Labels & </strong>Badges</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen13 = !isFullscreen13">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+            <span class="label bg-red">red</span>
+            <span class="label bg-cyan">cyan</span>
+            <span class="label bg-greensea">greensea</span>
+            <span class="label bg-primary">primary</span>
+            <span class="label bg-danger">danger</span>
+            <span class="label bg-info">info</span>
+            <span class="label bg-drank">drank</span>
+            <span class="label bg-lightred">lightred</span>
+            <span class="label bg-dutch">dutch</span>
+            <span class="label bg-hotpink">hotpink</span>
+
+            <span class="badge bg-red">1</span>
+            <span class="badge bg-cyan">2</span>
+            <span class="badge bg-greensea">3</span>
+            <span class="badge bg-primary">4</span>
+            <span class="badge bg-danger">5</span>
+            <span class="badge bg-info">6</span>
+            <span class="badge bg-drank">7</span>
+            <span class="badge bg-lightred">8</span>
+            <span class="badge bg-dutch">9</span>
+            <span class="badge bg-hotpink">10</span>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+      </div>
+      <!-- /col -->
+    </div>
+    <!-- /row -->
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

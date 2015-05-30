@@ -1,0 +1,590 @@
+<div class="page page-form-validate">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Form Stuff</a>
+        </li>
+        <li>
+          <a ui-sref="app.forms.validate">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+
+        <form name="userForm" ng-submit="submitForm(userForm.$valid)" role="form" novalidate>
+
+          <!-- tile -->
+          <section class="tile" fullscreen="isFullscreen01">
+
+            <!-- tile header -->
+            <div class="tile-header dvd dvd-btm">
+              <h1 class="custom-font"><strong>Disabled</strong> Submit</h1>
+              <ul class="controls">
+                <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                  <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                  <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                    <li>
+                      <a href tile-control-toggle>
+                        <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                        <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href tile-control-refresh ng-click="ajaxFaker()">
+                        <fa name="refresh"></fa> Refresh
+                      </a>
+                    </li>
+                    <li>
+                      <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                        <fa name="expand"></fa> Fullscreen
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </li>
+                <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+              </ul>
+            </div>
+            <!-- /tile header -->
+
+            <!-- tile body -->
+            <div class="tile-body">
+
+              <p class="text-muted">Submit button will be enabled after completing form.</p>
+
+
+              <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine, 'has-success' : userForm.username.$valid && !userForm.username.$pristine}">
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8" required>
+                <p class="help-block">
+                  <span ng-show="userForm.username.$invalid && !userForm.username.$pristine">Username is required.</span>
+                  <span ng-show="userForm.username.$error.minlength">Username is too short.</span>
+                  <span ng-show="userForm.username.$error.maxlength">Username is too long.</span>
+                </p>
+              </div>
+
+              <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine, 'has-success' : userForm.email.$valid && !userForm.email.$pristine}">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" class="form-control" ng-model="user.email" required>
+                <p class="help-block">
+                  <span ng-show="userForm.email.$invalid && !userForm.email.$pristine">Email is required.</span>
+                </p>
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine, 'has-success' : userForm.password.$valid && !userForm.password.$pristine}">
+                  <label for="password">Password: </label>
+                  <input type="password" name="password" id="password" class="form-control" ng-model="user.password" ng-minlength="6" required>
+                  <p class="help-block">
+                    <span ng-show="userForm.password.$invalid && !userForm.password.$pristine">Password is required.</span>
+                    <span ng-show="userForm.password.$error.minlength">Password is too short.</span>
+                  </p>
+                </div>
+
+                <div class="form-group col-md-6" ng-class="{ 'has-error' : userForm.passwordConfirm.$invalid && !userForm.passwordConfirm.$pristine, 'has-success' : userForm.passwordConfirm.$valid && !userForm.passwordConfirm.$pristine}">
+                  <label for="passwordConfirm">Password confirmation: </label>
+                  <input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control" ng-model="user.passwordConfirm" ui-validate=" '$value==user.password' " ui-validate-watch=" 'user.password' " required>
+                  <p class="help-block">
+                    <span ng-show='userForm.passwordConfirm.$error.validator'>Passwords do not match!</span>
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine, 'has-success' : userForm.phone.$valid && !userForm.phone.$pristine}">
+                <label for="phone">Phone: </label>
+                <input type="text" name="phone" id="phone" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
+                <p class="help-block">
+                  <span ng-show="userForm.phone.$invalid && !userForm.phone.$pristine">Phone in bad format.</span>
+                </p>
+              </div>
+
+              <div class="checkbox" ng-class="{ 'has-error' : userForm.agree.$invalid && !userForm.agree.$pristine, 'has-success' : userForm.agree.$valid && !userForm.agree.$pristine}">
+                <label class="checkbox checkbox-custom">
+                  <input type="checkbox" name="agree" id="agree" ng-model="user.agree" required><i></i> I agree to the <a href class="text-info">Terms of Service</a>
+                </label>
+                <p class="help-block">
+                  <span ng-show="userForm.agree.$invalid && !userForm.agree.$pristine">You must accept Terms of Service.</span>
+                </p>
+              </div>
+
+
+            </div>
+            <!-- /tile body -->
+
+
+            <!-- tile footer -->
+            <div class="tile-footer text-right bg-tr-black lter dvd dvd-top">
+              <!-- SUBMIT BUTTON -->
+              <button type="submit" class="btn btn-success" ng-disabled="userForm.$invalid">Submit</button>
+            </div>
+            <!-- /tile footer -->
+
+          </section>
+          <!-- /tile -->
+
+
+        </form>
+
+
+
+        <form name="form1" class="form-horizontal" submit-validate ng-submit="submitForm(form1.$valid)" role="form" novalidate>
+
+
+
+          <!-- tile -->
+          <section class="tile" fullscreen="isFullscreen03">
+
+            <!-- tile header -->
+            <div class="tile-header dvd dvd-btm">
+              <h1 class="custom-font"><strong>Basic</strong> Validations</h1>
+              <ul class="controls">
+                <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                  <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                  <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                    <li>
+                      <a href tile-control-toggle>
+                        <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                        <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href tile-control-refresh ng-click="ajaxFaker()">
+                        <fa name="refresh"></fa> Refresh
+                      </a>
+                    </li>
+                    <li>
+                      <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                        <fa name="expand"></fa> Fullscreen
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </li>
+                <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+              </ul>
+            </div>
+            <!-- /tile header -->
+
+            <!-- tile body -->
+            <div class="tile-body form-validation">
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Required</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc1" class="form-control mb-10" placeholder="Required field" ng-model="fc1" required>
+                  <select name="f2" class="form-control mb-10" ng-model="fc2" required>
+                    <option value="">Select option...</option>
+                    <option value="foo">Foo</option>
+                    <option value="bar">Bar</option>
+                  </select>
+                  <label class="checkbox checkbox-custom">
+                    <input name="fc3" type="checkbox" ng-model="fc3" class="form-control" required><i></i> Agree
+                  </label>
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Min Length</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc4" class="form-control" placeholder="minlength = 5" ng-model="fc4" ng-minlength="5" required>
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Max Length</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc5" class="form-control" placeholder="maxlength = 5" ng-model="fc5" ng-maxlength="5" required>
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Length Range</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc6" class="form-control" placeholder="minlength = 5 & maxlength = 10" ng-model="fc6" ng-minlength="5" ng-maxlength="10" required>
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Min value</label>
+                <div class="col-sm-9">
+                  <input type="number" name="fc7" class="form-control" placeholder="min = 8" ng-model="fc7" ui-validate=" '$value >= 8' " required>
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Max value</label>
+                <div class="col-sm-9">
+                  <input type="number" name="fc8" class="form-control" placeholder="max = 8" ng-model="fc8" ui-validate=" '$value <= 8' " required>
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Value Range</label>
+                <div class="col-sm-9">
+                  <input type="number" name="fc9" class="form-control" placeholder="min = 8 & max = 20" ng-model="fc9" ui-validate=" { a:'$value >= 8', b:'$value <= 20' } " required>
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">HEX Regex</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc10" class="form-control" placeholder="#ffffff" ng-model="fc10"  ng-pattern="/^#(?:[0-9a-fA-F]{3}){1,2}$/" required>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- /tile body -->
+
+            <!-- tile footer -->
+            <div class="tile-footer text-right bg-tr-black lter dvd dvd-top">
+              <!-- SUBMIT BUTTON -->
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+            <!-- /tile footer -->
+
+          </section>
+          <!-- /tile -->
+
+
+        </form>
+
+
+      </div>
+      <!-- /col -->
+
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+        <form name="contactForm" submit-validate ng-submit="submitForm(contactForm.$valid)" role="form" novalidate>
+
+
+          <!-- tile -->
+          <section class="tile" fullscreen="isFullscreen02">
+
+            <!-- tile header -->
+            <div class="tile-header dvd dvd-btm">
+              <h1 class="custom-font"><strong>OnBlur</strong> Validate</h1>
+              <ul class="controls">
+                <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                  <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                  <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                    <li>
+                      <a href tile-control-toggle>
+                        <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                        <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href tile-control-refresh ng-click="ajaxFaker()">
+                        <fa name="refresh"></fa> Refresh
+                      </a>
+                    </li>
+                    <li>
+                      <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
+                        <fa name="expand"></fa> Fullscreen
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </li>
+                <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+              </ul>
+            </div>
+            <!-- /tile header -->
+
+            <!-- tile body -->
+            <div class="tile-body">
+
+              <p class="text-muted">Inputs in this form validate on blur.</p>
+
+              <div class="row">
+
+                <div class="form-group col-md-6 mb-0" ng-class="{ 'has-error' : contactForm.name.$invalid && !contactForm.name.$pristine, 'has-success' : contactForm.name.$valid && !contactForm.name.$pristine}">
+                  <label for="name">Name: </label>
+                  <input type="text" name="name" id="name" class="form-control" ng-model="user.name" on-blur-validation required>
+                  <p class="help-block">
+                    <span ng-show="contactForm.name.$invalid && !contactForm.name.$pristine">Name is required.</span>
+                  </p>
+                </div>
+
+                <div class="form-group col-md-6 mb-0" ng-class="{ 'has-error' : contactForm.contactemail.$invalid && !contactForm.contactemail.$pristine || contactForm.contactemail.$invalid && submitted, 'has-success' : contactForm.contactemail.$valid && !contactForm.contactemail.$pristine || contactForm.contactemail.$valid && submitted}">
+                  <label for="contactemail">Email: </label>
+                  <input type="email" name="contactemail" id="contactemail" class="form-control" ng-model="user.contactemail" on-blur-validation>
+                  <p class="help-block">
+                    <span ng-show="contactForm.contactemail.$invalid && !contactForm.contactemail.$pristine || contactForm.contactemail.$invalid && submitted">Email in bad format.</span>
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="form-group" ng-class="{ 'has-error' : contactForm.website.$invalid && !contactForm.website.$pristine || contactForm.website.$invalid && submitted, 'has-success' : contactForm.website.$valid && !contactForm.website.$pristine || contactForm.website.$valid && submitted}">
+                <label for="website">Website: </label>
+                <input type="text" name="website" id="website" class="form-control" ng-model="user.website" placeholder="http://" ng-pattern="/(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})/" on-blur-validation>
+                <p class="help-block">
+                  <span ng-show="contactForm.website.$invalid && !contactForm.website.$pristine || contactForm.website.$invalid && submitted">Website in bad format.</span>
+                </p>
+              </div>
+
+              <div class="form-group" ng-class="{ 'has-error' : contactForm.message.$invalid && !contactForm.message.$pristine || contactForm.message.$invalid && submitted, 'has-success' : contactForm.message.$valid && !contactForm.message.$pristine || contactForm.message.$valid && submitted}">
+                <label for="message">Message: </label>
+                <textarea class="form-control" rows="7" name="message" id="message" placeholder="Type your message" ng-model="user.message"  on-blur-validation required></textarea>
+                <p class="help-block">
+                  <span ng-show="contactForm.message.$invalid && !contactForm.message.$pristine || contactForm.message.$invalid && submitted">Message is required.</span>
+                </p>
+              </div>
+
+
+            </div>
+            <!-- /tile body -->
+
+            <!-- tile footer -->
+            <div class="tile-footer text-right bg-tr-black lter dvd dvd-top">
+              <!-- SUBMIT BUTTON -->
+              <button type="submit" class="btn btn-lightred">Submit</button>
+            </div>
+            <!-- /tile footer -->
+
+          </section>
+          <!-- /tile -->
+
+
+        </form>
+
+
+
+        <form name="form2" class="form-horizontal" submit-validate ng-submit="submitForm(form2.$valid)" role="form" novalidate>
+
+          <!-- tile -->
+          <section class="tile" fullscreen="isFullscreen04">
+
+            <!-- tile header -->
+            <div class="tile-header dvd dvd-btm">
+              <h1 class="custom-font"><strong>Type </strong>Validations</h1>
+              <ul class="controls">
+                <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                  <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                  <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                    <li>
+                      <a href tile-control-toggle>
+                        <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                        <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href tile-control-refresh ng-click="ajaxFaker()">
+                        <fa name="refresh"></fa> Refresh
+                      </a>
+                    </li>
+                    <li>
+                      <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
+                        <fa name="expand"></fa> Fullscreen
+                      </a>
+                    </li>
+
+                  </ul>
+
+                </li>
+                <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+              </ul>
+            </div>
+            <!-- /tile header -->
+
+            <!-- tile body -->
+            <div class="tile-body form-validation">
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-9">
+                  <input type="email" name="fc11" class="form-control" placeholder="Email" ng-model="fc11" required >
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Url</label>
+                <div class="col-sm-9">
+                  <input type="url" name="fc12" class="form-control" placeholder="http://" ng-model="fc12" required >
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Digits</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc13" class="form-control" placeholder="Digits" ng-pattern="/^[0-9]+$/" ng-model="fc13" required >
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Numbers</label>
+                <div class="col-sm-9">
+                  <input type="number" name="fc14" class="form-control" placeholder="Number" ng-model="fc14" required >
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Alphanumeric</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc15" class="form-control" placeholder="Alphanumeric" ng-model="fc15" ng-pattern="/^([A-Za-z]|[0-9]|\s)+$/" required >
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Alpha</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc16" class="form-control" placeholder="Alpha" ng-model="fc16" ng-pattern="/^[a-zA-Z]+$/" required >
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Date ISO</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc17" class="form-control" placeholder="YYYY-MM-DD" ng-model="fc17" ng-pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/" required >
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Phone</label>
+                <div class="col-sm-9">
+                  <input type="text" name="fc18" class="form-control" placeholder="(XXX) XXXX XXX" ng-model="fc18" ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/" required >
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Equal</label>
+                <div class="col-sm-9">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input type="text" name="fc19" class="form-control" ng-model="fc19" required >
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" name="fc20" class="form-control" ng-model="fc20" ui-validate=" '$value==fc19' " ui-validate-watch=" 'fc19' " required >
+                      <span ng-show='form1.fc20.$error.validator'>Not match!</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <hr class="line-dashed line-full" />
+
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Blacklist</label>
+                <div class="col-sm-9">
+                  <input type="email" name="fc21" class="form-control" placeholder="type 'bad@domain.com'" ng-model="fc21" ui-validate="{blacklist : 'notBlackListed($value)' }" required >
+                  <span ng-show='form2.fc21.$error.blacklist'>This e-mail is in blacklist!</span>
+                </div>
+              </div>
+
+            </div>
+            <!-- /tile body -->
+
+            <!-- tile footer -->
+            <div class="tile-footer text-right bg-tr-black lter dvd dvd-top">
+              <!-- SUBMIT BUTTON -->
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+            <!-- /tile footer -->
+
+          </section>
+          <!-- /tile -->
+
+        </form>
+
+
+
+      </div>
+      <!-- /col -->
+
+
+
+    </div>
+    <!-- /row -->
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

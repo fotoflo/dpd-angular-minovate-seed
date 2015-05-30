@@ -1,0 +1,1031 @@
+<div class="page page-full page-chat">
+
+
+  <div class="tbox tbox-sm">
+
+
+
+
+
+
+    <!-- left side -->
+    <div class="tcol w-md bg-tr-white lt b-r">
+
+
+
+
+
+
+
+
+      <!-- left side header-->
+      <div class="p-15 bg-white">
+
+        <h3 class="custom-font m-0 mr-5 inline-block">Documentation</h3>
+
+      </div>
+      <!-- /left side header -->
+
+
+
+
+
+
+
+
+      <!-- left side body -->
+      <div class="p-15 hidden-sm hidden-xs" id="open-chats">
+
+        <ul class="list-unstyled">
+          <li class="text-info b-b pb-10 mb-10 b-info"><strong>Build</strong></li>
+          <li><a anchor-scroll="requirements">Required tools</a></li>
+          <li><a anchor-scroll="nodejs">Node.js</a></li>
+          <li><a anchor-scroll="yeoman">Yeoman</a></li>
+          <li><a anchor-scroll="bower">Bower</a></li>
+          <li><a anchor-scroll="sass">Sass</a></li>
+          <li class="mb-10"><a anchor-scroll="grunt">Grunt</a></li>
+          <li class="text-greensea b-b pb-10 mb-10 b-greensea"><strong>CSS</strong></li>
+          <li><a anchor-scroll="colors">Colors</a></li>
+          <li><a anchor-scroll="layout">Layout</a></li>
+          <li class="mb-10"><a anchor-scroll="global">Global Classes</a></li>
+          <li class="text-lightred b-b pb-10 mb-10 b-lightred"><strong>Angular</strong></li>
+          <li><a anchor-scroll="core">Core</a></li>
+          <li class="mb-10"><a anchor-scroll="directives">Directives</a></li>
+          <li class="text-amethyst b-b pb-10 mb-10 b-amethyst"><strong>Plugins</strong></li>
+          <li><a anchor-scroll="plugins">Documentation</a></li>
+        </ul>
+
+      </div>
+      <!-- /left side body -->
+
+
+
+
+
+
+
+
+    </div>
+    <!-- /left side -->
+
+
+
+
+
+
+
+    <!-- right side -->
+    <div class="tcol">
+
+
+
+      <!-- right side body -->
+      <div class="p-15">
+
+        <!-- tile -->
+        <section class="tile tile-simple">
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <h3 class="custom-font text-orange mt-0 mb-10">Overview</h3>
+            <p>Zip file structure:</p>
+
+<pre>
+-admin
+  -app // folder with non-builded angular app
+
+  -dist // folder with builded angular app
+    |-compiled // builded app with compiled files
+    |-uncompiled // builded app with uncompiled files
+
+-corporate // corporate web template
+-ecommerce // ecommerce web template
+-documentation // there you can find pdf documentation
+-psd // there are some psd's
+</pre>
+
+            <h4 class="mt-40">Changing Main Settings</h4>
+            <p>If you want to change App Name or some default layout settings you can do that in controller "MainCtrl" located at <code>app/scripts/controllers/main.js</code></p>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile tile-simple">
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <h3 class="custom-font text-info mt-0 mb-10">Building project</h3>
+            <p>Build your own project using <a href="http://yeoman.io/" target="_blank">Yeoman</a> scaffolding tool, <a href="http://bower.io/" target="_blank">Bower</a> dependencies management tool and <a href="http://gruntjs.com/" target="_blank">Grunt</a> automation tool.</p>
+
+            <div id="requirements" class="mt-40">
+              <h4>Required tools</h4>
+              <p>For properly using this project you will need some tools installed on your computer.</p>
+              <ul>
+                <li>As first make sure you have installed <strong>Node.js</strong> with package manager <strong>npm</strong>. You can check it in your terminal window using these commands <code>node --version</code> and <code>npm --version</code>. You can download Node.js <a href="http://nodejs.org/download/" target="_blank">here</a></li>
+                <li>As next step you need to install <strong>bower and grunt</strong>. Installing of <strong>Yeoman</strong> tool is optional.</li>
+                <li>I'm using SASS in this project so as next step you will need install <strong>SASS gem</strong>. You can check if you have installed this gem with this command <code>sass -v</code></li>
+                <li>After you have all tools installed, open your terminal window an go to root folder of your project. There you need run this commands to install all dependencies <code>npm install</code> and <code>bower install</code></li>
+                <li>Now you will be able to run your local server with this command <code>grunt serve</code></li>
+              </ul>
+            </div>
+
+            <div id="nodejs" class="mt-40">
+              <h4>Node.js</h4>
+              <p>You can download Node.js <a href="http://nodejs.org/download/" target="_blank">here</a>. Install it and check it in your terminal window with <code>node --version</code> and <code>npm --version</code>. If you get in some troubles try google it.</p>
+              <p>Now when you have node installed get to the root directory in terminal window and run command <code>npm install</code>. Node will download and install all dependencies for you.</p>
+            </div>
+
+            <div id="yeoman" class="mt-40">
+              <h4>Yeoman</h4>
+              <p>Yeoman is a scaffolding tool which is making your workflow clear, but if you don't want to use it so you do not.</p>
+              <p>You can easily install Yeoman with npm running this command in terminal <code>npm install -g yo</code></p>
+              <p>As this project is builded with Angular you will need to use angular-generator with yeoman so install it with this command <code>npm install -g generator-angular</code></p>
+              <p>You can find Yeoman documentation <a href="http://yeoman.io/learning/" targer="_blank">here</a></p>
+            </div>
+
+            <div id="bower" class="mt-40">
+              <h4>Bower</h4>
+              <p>Bower works by fetching and installing packages from all over, taking care of hunting, finding, downloading, and saving the stuff you’re looking for. Bower keeps track of these packages in a manifest file, <code>bower.json</code>.</p>
+              <pre>{
+  "name": "minovate",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "1.2.18",
+    "json3": "~3.3.1",
+    "es5-shim": "~3.1.0",
+    "bootstrap": "~3.2.0",
+    "angular-resource": "1.2.18",
+    "angular-cookies": "1.2.18",
+    "angular-sanitize": "1.2.18",
+    "angular-animate": "1.2.18",
+    "angular-touch": "1.2.18",
+    "bourbon": "~4.0.2",
+    "angular-fontawesome": "~0.1.2",
+    "font-awesome": "~4.2.0",
+    "weather-icons": "~0.0.1",
+    "angular-bootstrap": "~0.11.2",
+    "jquery.slimscroll": "~1.3.1",
+    "animate.css": "~3.2.0",
+    "jquery.sparkline": "http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.js",
+    "angular-loading-bar": "~0.5.1",
+    "angular-ui-router": "~0.2.11",
+    "angular-ui-utils": "~0.1.1",
+    "bootstrap-daterangepicker": "~1.3.12",
+    "ng-bs-daterangepicker": "~0.0.3",
+    "angular-momentjs": "~0.1.8",
+    "angular-fullscreen": "~1.0.0",
+    "angular-ui-tree": "~2.1.5",
+    "simple-line-icons": "~0.0.1",
+    "html.sortable": "~0.1.5",
+    "angular-toastr": "~0.4.0",
+    "angular-bootstrap-nav-tree": "*",
+    "oclazyload": "~0.3.8",
+    "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.2.0/chosen_v1.2.0.zip",
+    "angular-ui-select": "~0.8.3",
+    "textAngular": "~1.2.2",
+    "angular-bootstrap-colorpicker": "~3.0.8",
+    "angular-file-upload": "~1.1.5",
+    "ngImgCrop": "~0.2.0",
+    "angular-datatables": "~0.2.1",
+    "angular-ui-grid": "~3.0.0-rc.12",
+    "ng-table": "~0.3.3",
+    "angular-smart-table": "~1.4.2",
+    "morrisjs": "~0.5.1",
+    "flot": "~0.8.3",
+    "flot.tooltip": "~0.8.4",
+    "angular-flot": "~0.0.6",
+    "flot-spline": "*",
+    "d3": "~3.4.13",
+    "rickshaw": "~1.5.0",
+    "angular-rickshaw": "~0.5.0",
+    "owl-carousel": "~1.3.2",
+    "angular-google-maps": "~2.0.9",
+    "angular-ui-calendar": "~0.8.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.16",
+    "angular-scenario": "1.2.16"
+  },
+  "appPath": "app"
+}</pre>
+              <p>You can easily install Yeoman with npm running this command in terminal <code>npm install -g bower</code></p>
+              <p>Now when you have bower installed get to the root directory in terminal window and run command <code>bower install</code>. Bower will download and install all dependencies from <code>bower.json</code> file for you.</p>
+              <p>If you want add and install any additional dependency you can do it by running this command in root folder <code>bower install 'package name'</code></p>
+            </div>
+
+            <div id="sass" class="mt-40">
+              <h4>Sass</h4>
+              <p>Grunt will need Sass to be installed to compile Sass files into css and run project properly so we need to install it.</p>
+              <p>As first you need ruby installed on your computer. On windows download and install rubyinstaller from <a href="http://rubyinstaller.org/" target="_blank">here</a>. If you have ruby installed you can download sass gem with this command <code>gem install sass</code>. You can check if sass is installed properly by <code>sass -v</code></p>
+              <p>If we have Sass installed run this command <code>npm install grunt-contrib-sass --save-dev</code>, after that we can use grunt to compile Sass files into css.</p>
+              <p>You can check documentation for Sass <a href="http://sass-lang.com/install" target="_blank">here</a> or check this <a href="http://robots.thoughtbot.com/getting-started-with-sass-bourbon-and-neat-with-yeoman" targer="_blank">tutorial</a></p>
+            </div>
+
+            <div id="grunt" class="mt-40">
+              <h4>Grunt</h4>
+              <p><a href="gruntjs.com" target="_blank">Grunt</a> is a JavaScript task runner (Automation), save yourself from repetitive tasks.</p>
+              <p>There are two important files for grunt <strong>Grunfile.js</strong> and <strong>package.json</strong>. <strong>Gruntfile.js</strong> contains configurations for all plugins that grunt use. In <strong>package.json</strong> you can find all plugins that grunt use.</p>
+              <p>As we have all configured in this project we can run localhost server with this command from root folder <code>grunt serve</code></p>
+              <p>To build your project use this command from root folder <code>grunt build:dev</code></p>
+
+              <h4 class="mt-40">Grunt without minify/uglify</h4>
+
+              <p>If you want build project with Grunt and don't want to minify/uglify files, you have to use <code>Gruntfile-nominify.js</code> for building. Just rename this file to <code>Gruntfile.js</code> and run build.</p>
+            </div>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile tile-simple">
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <h3 class="custom-font text-greensea mt-0 mb-10">CSS</h3>
+            <p>Main css file is compiled with Sass, all Sass files you can find in this folder <code>app/sass</code>. Every part is divided into skeleton tree.</p>
+
+            <div id="colors" class="mt-40">
+              <h4>Colors</h4>
+              <p>There are few default <strong>color palletes</strong> that you can use by assigning it's classes to elements. You can find all of them in file <code>app/sass/shared/_global.scss</code> from line 25.</p>
+
+              <p>For background you can use class <code>.bg-'color-variant'</code> and for text <code>.text-'color-variant'</code></p>
+
+              <div class="row">
+                <div class="col-sm-6">
+
+                  <p class="text-cyan">.bg-cyan</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-cyan dker">.dker</span>
+                      <span class="tcol text-center bg-cyan dk">.dk</span>
+                      <span class="tcol text-center bg-cyan">.bg</span>
+                      <span class="tcol text-center bg-cyan lt">.lt</span>
+                      <span class="tcol text-center bg-cyan lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-amethyst">.bg-amethyst</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-amethyst dker">.dker</span>
+                      <span class="tcol text-center bg-amethyst dk">.dk</span>
+                      <span class="tcol text-center bg-amethyst">.bg</span>
+                      <span class="tcol text-center bg-amethyst lt">.lt</span>
+                      <span class="tcol text-center bg-amethyst lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-green">.bg-green</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-green dker">.dker</span>
+                      <span class="tcol text-center bg-green dk">.dk</span>
+                      <span class="tcol text-center bg-green">.bg</span>
+                      <span class="tcol text-center bg-green lt">.lt</span>
+                      <span class="tcol text-center bg-green lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-orange">.bg-orange</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-orange dker">.dker</span>
+                      <span class="tcol text-center bg-orange dk">.dk</span>
+                      <span class="tcol text-center bg-orange">.bg</span>
+                      <span class="tcol text-center bg-orange lt">.lt</span>
+                      <span class="tcol text-center bg-orange lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-red">.bg-red</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-red dker">.dker</span>
+                      <span class="tcol text-center bg-red dk">.dk</span>
+                      <span class="tcol text-center bg-red">.bg</span>
+                      <span class="tcol text-center bg-red lt">.lt</span>
+                      <span class="tcol text-center bg-red lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-greensea">.bg-greensea</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-greensea dker">.dker</span>
+                      <span class="tcol text-center bg-greensea dk">.dk</span>
+                      <span class="tcol text-center bg-greensea">.bg</span>
+                      <span class="tcol text-center bg-greensea lt">.lt</span>
+                      <span class="tcol text-center bg-greensea lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-dutch">.bg-dutch</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-dutch dker">.dker</span>
+                      <span class="tcol text-center bg-dutch dk">.dk</span>
+                      <span class="tcol text-center bg-dutch">.bg</span>
+                      <span class="tcol text-center bg-dutch lt">.lt</span>
+                      <span class="tcol text-center bg-dutch lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-hotpink">.bg-hotpink</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-hotpink dker">.dker</span>
+                      <span class="tcol text-center bg-hotpink dk">.dk</span>
+                      <span class="tcol text-center bg-hotpink">.bg</span>
+                      <span class="tcol text-center bg-hotpink lt">.lt</span>
+                      <span class="tcol text-center bg-hotpink lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-drank">.bg-drank</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-drank dker">.dker</span>
+                      <span class="tcol text-center bg-drank dk">.dk</span>
+                      <span class="tcol text-center bg-drank">.bg</span>
+                      <span class="tcol text-center bg-drank lt">.lt</span>
+                      <span class="tcol text-center bg-drank lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-blue">.bg-blue</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-blue dker">.dker</span>
+                      <span class="tcol text-center bg-blue dk">.dk</span>
+                      <span class="tcol text-center bg-blue">.bg</span>
+                      <span class="tcol text-center bg-blue lt">.lt</span>
+                      <span class="tcol text-center bg-blue lter">.lter</span>
+                    </span>
+                  </div>
+
+                </div>
+                <div class="col-sm-6">
+
+                  <p class="text-lightred">.bg-lightred</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-lightred dker">.dker</span>
+                      <span class="tcol text-center bg-lightred dk">.dk</span>
+                      <span class="tcol text-center bg-lightred">.bg</span>
+                      <span class="tcol text-center bg-lightred lt">.lt</span>
+                      <span class="tcol text-center bg-lightred lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-slategray">.bg-slategray</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-slategray dker">.dker</span>
+                      <span class="tcol text-center bg-slategray dk">.dk</span>
+                      <span class="tcol text-center bg-slategray">.bg</span>
+                      <span class="tcol text-center bg-slategray lt">.lt</span>
+                      <span class="tcol text-center bg-slategray lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-darkgray">.bg-darkgray</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-darkgray dker">.dker</span>
+                      <span class="tcol text-center bg-darkgray dk">.dk</span>
+                      <span class="tcol text-center bg-darkgray">.bg</span>
+                      <span class="tcol text-center bg-darkgray lt">.lt</span>
+                      <span class="tcol text-center bg-darkgray lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-primary">.bg-primary</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-primary dker">.dker</span>
+                      <span class="tcol text-center bg-primary dk">.dk</span>
+                      <span class="tcol text-center bg-primary">.bg</span>
+                      <span class="tcol text-center bg-primary lt">.lt</span>
+                      <span class="tcol text-center bg-primary lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-success">.bg-success</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-success dker">.dker</span>
+                      <span class="tcol text-center bg-success dk">.dk</span>
+                      <span class="tcol text-center bg-success">.bg</span>
+                      <span class="tcol text-center bg-success lt">.lt</span>
+                      <span class="tcol text-center bg-success lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-warning">.bg-warning</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-warning dker">.dker</span>
+                      <span class="tcol text-center bg-warning dk">.dk</span>
+                      <span class="tcol text-center bg-warning">.bg</span>
+                      <span class="tcol text-center bg-warning lt">.lt</span>
+                      <span class="tcol text-center bg-warning lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-danger">.bg-danger</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-danger dker">.dker</span>
+                      <span class="tcol text-center bg-danger dk">.dk</span>
+                      <span class="tcol text-center bg-danger">.bg</span>
+                      <span class="tcol text-center bg-danger lt">.lt</span>
+                      <span class="tcol text-center bg-danger lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-info">.bg-info</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-info dker">.dker</span>
+                      <span class="tcol text-center bg-info dk">.dk</span>
+                      <span class="tcol text-center bg-info">.bg</span>
+                      <span class="tcol text-center bg-info lt">.lt</span>
+                      <span class="tcol text-center bg-info lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-default">.bg-default</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-default dker">.dker</span>
+                      <span class="tcol text-center bg-default dk">.dk</span>
+                      <span class="tcol text-center bg-default">.bg</span>
+                      <span class="tcol text-center bg-default lt">.lt</span>
+                      <span class="tcol text-center bg-default lter">.lter</span>
+                    </span>
+                  </div>
+
+                  <p class="text-transparent-black">.bg-tr-black (transparent-black, there are also .bg-white and .bg-tr-white)</p>
+                  <div class="mb-10">
+                    <span class="tbox">
+                      <span class="tcol text-center bg-tr-black dker">.dker</span>
+                      <span class="tcol text-center bg-tr-black dk">.dk</span>
+                      <span class="tcol text-center bg-tr-black">.bg</span>
+                      <span class="tcol text-center bg-tr-black lt">.lt</span>
+                      <span class="tcol text-center bg-tr-black lter">.lter</span>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id="layout" class="mt-40">
+                <h4>Layout</h4>
+                <p><strong>Fix Header</strong>, add <code>header-fixed</code> class in body element.</p>
+                <p><strong>Fix Aside</strong>, add <code>aside-fixed</code> class in body element.</p>
+                <p><strong>Static Header</strong>, add <code>header-static</code> class in body element.</p>
+                <p><strong>Static Aside</strong>, add <code>aside-static</code> class in body element.</p>
+                <p><strong>Boxed Layout</strong>, add <code>boxed-layout</code> class in body and html element.</p>
+                <p><strong>Small Sidebar</strong>, add <code>sidebar-sm-forced sidebar-sm</code> classes in body and html element.</p>
+                <p><strong>Extra-Small Sidebar</strong>, add <code>sidebar-xs-forced sidebar-xs</code> classes in body and html element.</p>
+                <p><strong>Horizontal Menu</strong>, add <code>hz-menu</code> class in body and html element.</p>
+                <p><strong>Rtl Layout</strong>, add <code>rtl</code> class in body and html element.</p>
+              </div>
+
+              <div id="global" class="mt-40">
+                <h4>Global Classes</h4>
+                <table class="table table-border b-a">
+                  <tbody>
+                    <tr class="bg-tr-black lter">
+                      <td colspan="2">Text Sizes</td>
+                    </tr>
+                    <tr>
+                      <td class="w-lg">.text-xs</td>
+                      <td class="text-xs">font-size: 10px;</td>
+                    </tr>
+                    <tr>
+                      <td>.text-sm</td>
+                      <td class="text-sm">font-size: 12px;</td>
+                    </tr>
+                    <tr>
+                      <td>.text-md</td>
+                      <td class="text-md">font-size: 14px;</td>
+                    </tr>
+                    <tr>
+                      <td>.text-lg</td>
+                      <td class="text-lg">font-size: 18px;</td>
+                    </tr>
+                    <tr>
+                      <td>.text-elg</td>
+                      <td class="text-elg">font-size: 32px;</td>
+                    </tr>
+                    <tr class="bg-tr-black lter">
+                      <td colspan="2">Displays</td>
+                    </tr>
+                    <tr>
+                      <td>.block</td>
+                      <td>display: block</td>
+                    </tr>
+                    <tr>
+                      <td>.inline</td>
+                      <td>display: inline</td>
+                    </tr>
+                    <tr>
+                      <td>.inline-block</td>
+                      <td>display: inline-block</td>
+                    </tr>
+                    <tr class="bg-tr-black lter">
+                      <td colspan="2">Margins</td>
+                    </tr>
+                    <tr>
+                      <td>.m-auto</td>
+                      <td>margin: auto</td>
+                    </tr>
+                    <tr>
+                      <td>.m-40, .mt-40, .mr-40, .mb-40, .ml-40</td>
+                      <td>margin: 40px, margin-top: 40px, margin-right: 40px, margin-bottom: 40px, margin-left: 40px</td>
+                    </tr>
+                    <tr>
+                      <td>.m-20, .mt-20, .mr-20, .mb-20, .ml-20</td>
+                      <td>margin: 20px, margin-top: 20px, margin-right: 20px, margin-bottom: 20px, margin-left: 20px</td>
+                    </tr>
+                    <tr>
+                      <td>.m-10, .mt-10, .mr-10, .mb-10, .ml-10</td>
+                      <td>margin: 10px, margin-top: 10px, margin-right: 10px, margin-bottom: 10px, margin-left: 10px</td>
+                    </tr>
+                    <tr>
+                      <td>.m-5, .mt-5, .mr-5, .mb-5, .ml-5</td>
+                      <td>margin: 5px, margin-top: 5px, margin-right: 5px, margin-bottom: 5px, margin-left: 5px</td>
+                    </tr>
+                    <tr>
+                      <td>.m-0, .mt-0, .mr-0, .mb-0, .ml-0</td>
+                      <td>margin: 0, margin-top: 0, margin-right: 0, margin-bottom: 0, margin-left: 0</td>
+                    </tr>
+                    <tr class="bg-tr-black lter">
+                      <td colspan="2">Paddings</td>
+                    </tr>
+                    <tr>
+                      <td>.p-30, .pt-30, .pr-30, .pb-30, .pl-30</td>
+                      <td>padding: 30px, padding-top: 30px, padding-right: 30px, padding-bottom: 30px, padding-left: 30px</td>
+                    </tr>
+                    <tr>
+                      <td>.p-20, .mt-20, .mr-20, .mb-20, .ml-20</td>
+                      <td>padding: 20px, padding-top: 20px, padding-right: 20px, padding-bottom: 20px, padding-left: 20px</td>
+                    </tr>
+                    <tr>
+                      <td>.p-15, .pt-15, .pr-15, .pb-15, .pl-15</td>
+                      <td>padding: 15px, padding-top: 15px, padding-right: 15px, padding-bottom: 15px, padding-left: 15px</td>
+                    </tr>
+                    <tr>
+                      <td>.p-10, .pt-10, .pr-10, .pb-10, .pl-10</td>
+                      <td>padding: 10px, padding-top: 10px, padding-right: 10px, padding-bottom: 10px, padding-left: 10px</td>
+                    </tr>
+                    <tr>
+                      <td>.p-0, .pt-0, .pr-0, .pb-0, .pl-0</td>
+                      <td>padding: 0, padding-top: 0, padding-right: 0, padding-bottom: 0, padding-left: 0</td>
+                    </tr>
+                    <tr class="bg-tr-black lter">
+                      <td colspan="2">Borders</td>
+                    </tr>
+                    <tr>
+                      <td>.b-0</td>
+                      <td>border: 0</td>
+                    </tr>
+                    <tr>
+                      <td>.bt-0</td>
+                      <td>border-top: 0</td>
+                    </tr>
+                    <tr>
+                      <td>.bb-0</td>
+                      <td>border-bottom: 0</td>
+                    </tr>
+                    <tr>
+                      <td>.b-a</td>
+                      <td>border: 1px solid rgba(0,0,0,.05)</td>
+                    </tr>
+                    <tr>
+                      <td>.b-t</td>
+                      <td>border-top: 1px solid rgba(0,0,0,.05)</td>
+                    </tr>
+                    <tr>
+                      <td>.b-r</td>
+                      <td>border-right: 1px solid rgba(0,0,0,.05)</td>
+                    </tr>
+                    <tr>
+                      <td>.b-b</td>
+                      <td>border-bottom: 1px solid rgba(0,0,0,.05)</td>
+                    </tr>
+                    <tr>
+                      <td>.b-l</td>
+                      <td>border-left: 1px solid rgba(0,0,0,.05)</td>
+                    </tr>
+                    <tr>
+                      <td>.b-dashed</td>
+                      <td>border-style: dashed</td>
+                    </tr>
+                    <tr>
+                      <td>.b-solid</td>
+                      <td>border-coloe: #ddd</td>
+                    </tr>
+                    <tr>
+                      <td>.b-2x</td>
+                      <td>border-width: 2px</td>
+                    </tr>
+                    <tr>
+                      <td>.b-3x</td>
+                      <td>border-width: 3px</td>
+                    </tr>
+                    <tr>
+                      <td>.b-'color-variant' (.b-cyan)</td>
+                      <td>border-color: 'color-variant'</td>
+                    </tr>
+                    <tr class="bg-tr-black lter">
+                      <td colspan="2">Border Radius</td>
+                    </tr>
+                    <tr>
+                      <td>.br-0</td>
+                      <td>border-radius: 0</td>
+                    </tr>
+                    <tr>
+                      <td>.br-2</td>
+                      <td>border-radius: 2px</td>
+                    </tr>
+                    <tr>
+                      <td>.br-2-t</td>
+                      <td>border-radius: 2px 2px 0 0</td>
+                    </tr>
+                    <tr>
+                      <td>.br-2-r</td>
+                      <td>border-radius: 0 2px 2px 0</td>
+                    </tr>
+                    <tr>
+                      <td>.br-2-b</td>
+                      <td>border-radius: 0 0 2px 2px</td>
+                    </tr>
+                    <tr>
+                      <td>.br-2-l</td>
+                      <td>border-radius: 2px 0 0 2px</td>
+                    </tr>
+                    <tr class="bg-tr-black lter">
+                      <td colspan="2">Sizes</td>
+                    </tr>
+                    <tr>
+                      <td>.size-30x30, .wh30</td>
+                      <td>width: 30px; height: 30px</td>
+                    </tr>
+                    <tr>
+                      <td>.size-45x45, .wh45</td>
+                      <td>width: 45px; height: 45px</td>
+                    </tr>
+                    <tr>
+                      <td>.size-50x50, .wh50</td>
+                      <td>width: 50px; height: 50px</td>
+                    </tr>
+                    <tr>
+                      <td>.w-xxs, .w-60</td>
+                      <td>width: 60px</td>
+                    </tr>
+                    <tr>
+                      <td>.w-xs, .w-100</td>
+                      <td>width: 100px</td>
+                    </tr>
+                    <tr>
+                      <td>.w-sm, .w-150</td>
+                      <td>width: 150px</td>
+                    </tr>
+                    <tr>
+                      <td>.w-md, .w-240</td>
+                      <td>width: 240px</td>
+                    </tr>
+                    <tr>
+                      <td>.w-lg, .w-280</td>
+                      <td>width: 280px</td>
+                    </tr>
+                    <tr>
+                      <td>.w-xl, .w-360</td>
+                      <td>width: 360px</td>
+                    </tr>
+                    <tr>
+                      <td>.w-xxl, .w-420</td>
+                      <td>width: 420px</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile tile-simple">
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <h3 class="custom-font text-lightred mt-0 mb-10">AngularJS</h3>
+            <p>You must have some basic knowledge about AngularJS and some Angular modules (ui-router) to start work with this project.</p>
+
+            <div id="core" class="mt-40">
+              <h4>Core Modules</h4>
+              <p><strong>ui-router</strong>, for Nested Routing and Nested View, check the <a href="http://angular-ui.github.io/ui-router/" target="_blank">official documents</a></p>
+              <p><strong>ui-utils</strong>, many useful utilities for Angular including jQuery Passthrough for calling jQuery functions, <a href="http://angular-ui.github.io/ui-utils/" target="_blank">official documents</a></p>
+              <p><strong>oclazyload</strong>, for lazy loading of js and css files, <a href="https://github.com/ocombe/ocLazyLoad" target="_blank">official documents</a></p>
+<pre>resolve: {
+  plugins: ['$ocLazyLoad', function($ocLazyLoad) {
+    return $ocLazyLoad.load([
+      'scripts/vendor/datatables/datatables.bootstrap.min.css'
+    ]);
+  }]
+}</pre>
+            </div>
+
+            <div id="directives" class="mt-40">
+                <h4>Directives</h4>
+                <table class="table table-border b-a">
+                  <tbody>
+                    <tr class="bg-tr-black lter">
+                      <td colspan="2">Official Directives</td>
+                    </tr>
+                    <tr>
+                      <td class="w-lg">angular-fontawesome</td>
+                      <td>A simple directive for FontAwesome icons, <a href="https://github.com/picardy/angular-fontawesome" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>ui-bootstrap</td>
+                      <td>Bootstrap components written in pure AngularJS, <a href="http://angular-ui.github.io/bootstrap/" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>angular-loading-bar</td>
+                      <td>An automatic loading bar using angular interceptors, <a href="http://chieffancypants.github.io/angular-loading-bar/" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>angular-momentjs</td>
+                      <td>Moment.js with Angular.js, <a href="https://github.com/gdi2290/angular-momentjs" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>lazyModel</td>
+                      <td>AngularJS directive that works like ng-model but accept changes only when form is submitted, <a href="https://github.com/vitalets/lazy-model" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>angular-toastr</td>
+                      <td>Angular port of CodeSeven/toastr, <a href="https://github.com/Foxandxss/angular-toastr" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>angularBootstrapNavTree</td>
+                      <td>This is a Tree directive for Angular JS apps that use Bootstrap CSS, <a href="https://github.com/nickperkinslondon/angular-bootstrap-nav-tree" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>ui.select</td>
+                      <td>AngularJS-native version of Select2 and Selectize, <a href="https://github.com/angular-ui/ui-select" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>ui.tree</td>
+                      <td>Angular UI Tree is an AngularJS UI component that can sort nested lists, <a href="https://github.com/JimLiu/angular-ui-tree" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>textAngular</td>
+                      <td>A radically powerful Text-Editor/Wysiwyg editor for Angular.js, <a href="https://github.com/fraywing/textAngular" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>colorpicker.module</td>
+                      <td>Native AngularJS colorpicker directive, <a href="https://github.com/buberdds/angular-bootstrap-colorpicker" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>angularFileUpload</td>
+                      <td>Angular File Upload is a module for the AngularJS framework, <a href="https://github.com/nervgh/angular-file-upload" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>ngImgCrop</td>
+                      <td>Image Crop directive for AngularJS, <a href="https://github.com/alexk111/ngImgCrop" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>datatables</td>
+                      <td>Datatables directives for AngularJS, <a href="http://l-lin.github.io/angular-datatables/#/gettingStarted" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>ui.grid</td>
+                      <td>A data grid for AngularJS, part of the AngularUI suite, <a href="http://ui-grid.info/" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>ngTable</td>
+                      <td>Angular Table directive, <a href="http://bazalt-cms.com/ng-table/" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>smart-table</td>
+                      <td>Code source of Smart Table module: a table/grid for Angularjs, <a href="https://github.com/lorenzofox3/Smart-Table" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>angular-flot</td>
+                      <td>An Angular directive which wraps Flotcharts, <a href="https://github.com/develersrl/angular-flot" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>angular-rickshaw</td>
+                      <td>An AngularJS directive for Rickshaw, <a href="https://github.com/ngyewch/angular-rickshaw" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>uiGmapgoogle-maps</td>
+                      <td>AngularJS directives to integrate Google Maps into your applications, <a href="http://angular-ui.github.io/angular-google-maps/#!/" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr>
+                      <td>ui.calendar</td>
+                      <td>A complete AngularJS directive for the Arshaw FullCalendar, <a href="https://github.com/angular-ui/ui-calendar" target="_blank">documentation</a></td>
+                    </tr>
+                    <tr class="bg-tr-black lter">
+                      <td colspan="2">Custom Directives <code>app/scripts/directives</code></td>
+                    </tr>
+                    <tr>
+                      <td>activatebutton.js</td>
+                      <td>Directive for animate button activate</td>
+                    </tr>
+                    <tr>
+                      <td>active-toggle.js</td>
+                      <td>Directive for toggling active class on element and target</td>
+                    </tr>
+                    <tr>
+                      <td>anchor-scroll.js</td>
+                      <td>Scroll to anchor point directive</td>
+                    </tr>
+                    <tr>
+                      <td>chart-morris.js</td>
+                      <td>Directive for morris charts</td>
+                    </tr>
+                    <tr>
+                      <td>check-toggler.js</td>
+                      <td>Directive for togglick class checked</td>
+                    </tr>
+                    <tr>
+                      <td>clock.js</td>
+                      <td>Directive for svg analog clock</td>
+                    </tr>
+                    <tr>
+                      <td>collapsesidebar.js</td>
+                      <td>Aside collapsing directive</td>
+                    </tr>
+                    <tr>
+                      <td>daterangepicker.js</td>
+                      <td>Directive for daterangepicker</td>
+                    </tr>
+                    <tr>
+                      <td>formsubmit.js</td>
+                      <td>Validate form at submit directive</td>
+                    </tr>
+                    <tr>
+                      <td>gaugechart.js</td>
+                      <td>Gauge Charts directive</td>
+                    </tr>
+                    <tr>
+                      <td>navcollapse.js</td>
+                      <td>Dropdown collapsing in main navbar directive</td>
+                    </tr>
+                    <tr>
+                      <td>onblurvalidation.js</td>
+                      <td>Validate form field on blur directive</td>
+                    </tr>
+                    <tr>
+                      <td>pageloader.js</td>
+                      <td>Pageloader directive</td>
+                    </tr>
+                    <tr>
+                      <td>prettyprint.js</td>
+                      <td>Google prettyprint directive</td>
+                    </tr>
+                    <tr>
+                      <td>ripple.js</td>
+                      <td>Add ripple effect to main menu button</td>
+                    </tr>
+                    <tr>
+                      <td>slimscroll.js</td>
+                      <td>Use slimscroll scrollbars</td>
+                    </tr>
+                    <tr>
+                      <td>sparkline.js</td>
+                      <td>Sparkline charts directive</td>
+                    </tr>
+                    <tr>
+                      <td>tilecontrolclose.js</td>
+                      <td>Remove tile from DOM</td>
+                    </tr>
+                    <tr>
+                      <td>tilecontrolfullscreen.js</td>
+                      <td>Show tile in fullscreen</td>
+                    </tr>
+                    <tr>
+                      <td>tilecontrolrefresh.js</td>
+                      <td>Refresh tile</td>
+                    </tr>
+                    <tr>
+                      <td>tilecontroltoggle.js</td>
+                      <td>Toggle/Expand tile</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile tile-simple">
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <h3 class="custom-font text-amethyst mt-0 mb-10">Plugins</h3>
+            <p>jQuery Plugins.</p>
+
+            <div id="plugins" class="mt-40">
+
+              <h4>Plugins</h4>
+
+              <table class="table table-border b-a">
+                <tbody>
+                <tr>
+                  <td class="w-lg">jquery.slimscroll</td>
+                  <td>Transforms any div into a scrollable area with a nice scrollbar, <a href="http://rocha.la/jQuery-slimScroll" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>jquery.sparkline</td>
+                  <td>This jQuery plugin generates sparklines (small inline charts), <a href="http://omnipotent.net/jquery.sparkline/#s-about" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>moment.js</td>
+                  <td>Parse, validate, manipulate, and display dates in JavaScript, <a href="http://momentjs.com/" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>daterangepicker.js</td>
+                  <td>This date range picker component for Bootstrap creates a dropdown menu from which a user can select a range of dates, <a href="https://github.com/dangrossman/bootstrap-daterangepicker" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>html.sortable.js</td>
+                  <td>Lightweight jQuery plugin to create sortable lists and grids using native HTML5 drag and drop API, <a href="https://github.com/voidberg/html5sortable" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>Datatables</td>
+                  <td>DataTables is a plug-in for the jQuery Javascript library, <a href="http://www.datatables.net/" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>raphael.js</td>
+                  <td>Raphaël is a small JavaScript library that should simplify your work with vector graphics on the web, <a href="http://raphaeljs.com/" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>morris.js</td>
+                  <td>good-looking charts shouldn't be difficult, <a href="http://morrisjs.github.io/morris.js/" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>jquery.flot.js</td>
+                  <td>Attractive JavaScript plotting for jQuery, <a href="http://www.flotcharts.org/" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>rickshaw.js</td>
+                  <td>Rickshaw is a JavaScript toolkit for creating interactive time series graphs, <a href="http://code.shutterstock.com/rickshaw/" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>fullcalendar.js</td>
+                  <td>FullCalendar is a jQuery plugin that provides a full-sized, drag & drop event calendar, <a href="http://fullcalendar.io/" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>chosen.jquery.min.js</td>
+                  <td>Chosen is a library for making long, unwieldy select boxes more friendly, <a href="https://github.com/harvesthq/chosen" target="_blank">documentation</a></td>
+                </tr>
+                <tr>
+                  <td>owl-carousel</td>
+                  <td>Touch enabled jQuery plugin that lets you create beautiful responsive carousel slider, <a href="http://owlgraphic.com/owlcarousel/" target="_blank">documentation</a></td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+      </div>
+      <!-- /right side body -->
+
+
+    </div>
+    <!-- /right side -->
+
+
+
+  </div>
+
+
+
+</div>
+

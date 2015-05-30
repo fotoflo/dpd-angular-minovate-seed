@@ -1,0 +1,323 @@
+<div class="page page-form-wizard">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">Form Stuff</a>
+        </li>
+        <li>
+          <a ui-sref="app.forms.wizard">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+
+    <tabset class="tab-animation tab-container tab-wizard" justified="true" set-ng-animate="true" ng-init="steps={step1:true, step2:false, step3:false, step4:false, step5: false}">
+
+      <tab active="steps.step1">
+
+        <tab-heading>
+          Personal Information
+          <span class="badge badge-default pull-right wizard-step">1</span>
+        </tab-heading>
+
+        <form name="step1" role="form" novalidate class="form-validation">
+
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="username">Name: </label>
+              <input type="text" name="name" id="name" class="form-control" ng-model="user.name" required>
+              <p class="help-block">
+                <span ng-show="step1.name.$invalid && !step1.name.$pristine">Name is required.</span>
+              </p>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="username">Username: </label>
+              <input type="text" name="username" id="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8" required>
+              <p class="help-block">
+                <span ng-show="step1.username.$invalid && !step1.username.$pristine">Username is required.</span>
+                <span ng-show="step1.username.$error.minlength">Username is too short.</span>
+                <span ng-show="step1.username.$error.maxlength">Username is too long.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="form-group col-md-6">
+              <label for="password">Password: </label>
+              <input type="password" name="password" id="password" class="form-control" ng-model="user.password" ng-minlength="6" required>
+              <p class="help-block">
+                <span ng-show="step1.password.$invalid && !step1.password.$pristine">Password is required.</span>
+                <span ng-show="step1.password.$error.minlength">Password is too short.</span>
+              </p>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="passwordConfirm">Password confirmation: </label>
+              <input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control" ng-model="user.passwordConfirm" ui-validate=" '$value==user.password' " ui-validate-watch=" 'user.password' " required>
+              <p class="help-block">
+                <span ng-show='step1.passwordConfirm.$error.validator'>Passwords do not match!</span>
+              </p>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="message">About you: </label>
+            <textarea class="form-control" rows="5" name="message" id="message" placeholder="Write something about you..." ng-model="user.message"></textarea>
+          </div>
+
+          <button type="submit" ng-disabled="step1.$invalid" class="btn btn-default" ng-click="steps.step2=true">Next</button>
+
+        </form>
+
+      </tab>
+
+      <tab active="steps.step2" disabled="step1.$invalid">
+
+        <tab-heading>
+          Address
+          <span class="badge badge-default pull-right wizard-step">2</span>
+        </tab-heading>
+
+        <form name="step2" role="form" novalidate>
+
+          <div class="row">
+            <div class="form-group col-md-8 mb-0">
+              <label for="street">Street: </label>
+              <input type="text" name="street" id="street" class="form-control" ng-model="user.street" placeholder="Enter street address" required>
+              <p class="help-block">
+                <span ng-show="step2.street.$invalid && !step2.street.$pristine">Street is required.</span>
+              </p>
+            </div>
+            <div class="form-group col-md-4 mb-0">
+              <label for="dnumber">Door no.: </label>
+              <input type="text" name="dnumber" id="dnumber" class="form-control" ng-model="user.dnumber" placeholder="Enter door number" required>
+              <p class="help-block">
+                <span ng-show="step2.dnumber.$invalid && !step2.dnumber.$pristine">Door number is required.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address2">Address Line 2: </label>
+            <input type="text" name="address2" id="address2" class="form-control" ng-model="user.address2" placeholder="Enter secondary address">
+          </div>
+
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label for="city">City: </label>
+              <input type="text" name="city" id="city" class="form-control" ng-model="user.city" placeholder="Enter city" required>
+              <p class="help-block">
+                <span ng-show="step2.city.$invalid && !step2.city.$pristine">City is required.</span>
+              </p>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="state">State: </label>
+              <input type="text" name="state" id="state" class="form-control" ng-model="user.state" placeholder="Enter state" required>
+              <p class="help-block">
+                <span ng-show="step2.state.$invalid && !step2.state.$pristine">State is required.</span>
+              </p>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="zip">Zip: </label>
+              <input type="text" name="zip" id="zip" class="form-control" ng-model="user.zip" placeholder="Enter zip" required>
+              <p class="help-block">
+                <span ng-show="step2.zip.$invalid && !step2.zip.$pristine">Zip is required.</span>
+              </p>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-default" ng-click="steps.step1=true">Previous</button>
+          <button type="submit" ng-disabled="step2.$invalid" class="btn btn-default pull-right" ng-click="steps.step3=true">Next</button>
+
+        </form>
+
+      </tab>
+
+      <tab active="steps.step3" disabled="step2.$invalid">
+
+        <tab-heading>
+          Education
+          <span class="badge badge-default pull-right wizard-step">3</span>
+        </tab-heading>
+
+        <form name="step3" role="form" novalidate>
+
+          <h4 class="custom-font"><strong>Primary</strong> School</h4>
+
+          <div class="row">
+            <div class="form-group col-md-4 mb-0">
+              <label for="pr-subject">Subject: </label>
+              <input type="text" name="pr-subject" id="pr-subject" class="form-control" ng-model="user.prsubject">
+            </div>
+            <div class="form-group col-md-4 mb-0">
+              <label for="pr-name">School name: </label>
+              <input type="text" name="pr-name" id="pr-name" class="form-control" ng-model="user.prname" required>
+            </div>
+            <div class="form-group col-md-2 mb-0">
+              <label for="prstart">Start Date: </label>
+              <input type="text" name="prstart" id="prstart" class="form-control" ng-model="user.prstart" placeholder="YYYY-MM-DD" ng-pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/">
+              <p class="help-block">
+                <span ng-show="step3.prstart.$invalid && !step3.prstart.$pristine">Bad format.</span>
+              </p>
+            </div>
+            <div class="form-group col-md-2 mb-0">
+              <label for="prend">End Date: </label>
+              <input type="text" name="prend" id="prend" class="form-control" ng-model="user.prend" placeholder="YYYY-MM-DD" ng-pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/">
+              <p class="help-block">
+                <span ng-show="step3.prend.$invalid && !step3.prend.$pristine">Bad format.</span>
+              </p>
+            </div>
+          </div>
+
+          <h4 class="custom-font"><strong>Secondary</strong> School</h4>
+
+          <div class="row">
+            <div class="form-group col-md-4 mb-0">
+              <label for="sc-subject">Subject: </label>
+              <input type="text" name="sc-subject" id="sc-subject" class="form-control" ng-model="user.scsubject">
+            </div>
+            <div class="form-group col-md-4 mb-0">
+              <label for="sc-name">School name: </label>
+              <input type="text" name="sc-name" id="sc-name" class="form-control" ng-model="user.scname">
+            </div>
+            <div class="form-group col-md-2 mb-0">
+              <label for="scstart">Start Date: </label>
+              <input type="text" name="scstart" id="scstart" class="form-control" ng-model="user.scstart" placeholder="YYYY-MM-DD" ng-pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/">
+              <p class="help-block">
+                <span ng-show="step3.scstart.$invalid && !step3.scstart.$pristine">Bad format.</span>
+              </p>
+            </div>
+            <div class="form-group col-md-2 mb-0">
+              <label for="scend">End Date: </label>
+              <input type="text" name="scend" id="scend" class="form-control" ng-model="user.scend" placeholder="YYYY-MM-DD" ng-pattern="/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$/">
+              <p class="help-block">
+                <span ng-show="step3.scend.$invalid && !step3.scend.$pristine">Bad format.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="qualification">Other qualification: </label>
+            <textarea class="form-control" rows="5" name="qualification" id="qualification" ng-model="user.qualification"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-default" ng-click="steps.step2=true">Previous</button>
+          <button type="submit" ng-disabled="step3.$invalid" class="btn btn-default pull-right" ng-click="steps.step4=true">Next</button>
+
+        </form>
+      </tab>
+
+      <tab active="steps.step4" disabled="step3.$invalid">
+
+        <tab-heading>
+          Contact
+          <span class="badge badge-default pull-right wizard-step">4</span>
+        </tab-heading>
+
+        <form name="step4" role="form" novalidate>
+
+          <div class="row">
+            <div class="form-group col-md-6 mb-0">
+              <label for="email">Email: </label>
+              <input type="email" name="email" id="email" class="form-control" ng-model="user.email" required>
+               <p class="help-block">
+                <span ng-show="step4.email.$invalid && !step4.email.$pristine">Email is required.</span>
+               </p>
+            </div>
+            <div class="form-group col-md-6 mb-0">
+              <label for="phone">Phone: </label>
+              <input type="text" name="phone" id="phone" class="form-control" ng-model="user.phone" placeholder="(XXX) XXXX XXX"  ng-pattern="/\([0-9]{3}\) ([0-9]{3}) ([0-9]{3})$/">
+               <p class="help-block">
+                <span ng-show="step4.phone.$invalid && !step4.phone.$pristine">Bad format.</span>
+               </p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="web">Website: </label>
+            <input type="url" name="web" id="web" class="form-control" ng-model="user.web" placeholder="http://">
+             <p class="help-block">
+              <span ng-show="step4.web.$invalid && !step4.web.$pristine">Bad format.</span>
+             </p>
+          </div>
+
+          <button type="submit" class="btn btn-default" ng-click="steps.step3=true">Previous</button>
+          <button type="submit" ng-disabled="step4.$invalid" class="btn btn-default pull-right" ng-click="steps.step5=true">Next</button>
+
+        </form>
+      </tab>
+
+      <tab active="steps.step5" disabled="step4.$invalid">
+
+        <tab-heading>
+          EULA
+          <span class="pull-right wizard-step">5</span>
+        </tab-heading>
+
+        <p class="well">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?</p>
+
+        <form name="step5" role="form" novalidate>
+
+          <div class="checkbox">
+            <label class="checkbox checkbox-custom">
+              <input type="checkbox" name="agree" id="agree" ng-model="user.agree" required><i></i> I agree to the <a href class="text-info">Terms of Service</a>
+            </label>
+            <p class="help-block">
+              <span ng-show="step5.agree.$invalid && !step5.agree.$pristine" class="text-red">You must accept Terms of Service.</span>
+            </p>
+          </div>
+
+          <div class="checkbox">
+            <label class="checkbox checkbox-custom">
+              <input type="checkbox" name="newsletter" id="newsletter" ng-model="user.newsletter"><i></i> Receive newsletter</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-default" ng-click="steps.step4=true">Previous</button>
+          <button type="submit" ng-disabled="step5.$invalid" class="btn btn-success pull-right">Finish</button>
+
+        </form>
+
+      </tab>
+
+    </tabset>
+
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

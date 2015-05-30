@@ -1,0 +1,471 @@
+<div class="page page-navs">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">UI Kit</a>
+        </li>
+        <li>
+          <a ui-sref="app.ui.navs">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+
+      <!-- col -->
+      <div class="col-md-6">
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Accordion </strong> </h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+            <div ng-controller="AccordionDemoCtrl">
+
+              <p>
+                <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+                <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
+              </p>
+
+              <label class="checkbox checkbox-custom">
+                <input type="checkbox" ng-model="oneAtATime"><i></i>
+                Open only one at a time
+              </label>
+
+              <accordion close-others="oneAtATime">
+                <accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                  This content is straight in the template.
+                </accordion-group>
+                <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+                  {{group.content}}
+                </accordion-group>
+                <accordion-group heading="Dynamic Body Content" class="panel-greensea">
+                  <p>The body of the accordion group grows to fit the contents</p>
+                    <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+                    <div ng-repeat="item in items">{{item}}</div>
+                </accordion-group>
+                <accordion-group is-open="status.open" class="panel-danger">
+                    <accordion-heading>
+                        I can have markup, too! <i class="pull-right fa" ng-class="{'fa-angle-down': status.open, 'fa-angle-right': !status.open}"></i>
+                    </accordion-heading>
+                    This is just some content to illustrate fancy headings.
+                </accordion-group>
+              </accordion>
+
+            </div>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen03">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Pills </strong>Navigation</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+
+            <div ng-controller="PillsDemoCtrl">
+
+              <p>Select a pill by setting active binding to true:</p>
+
+              <ul class="nav tile-nav">
+                <li><a href="" class="btn btn-default btn-sm" ng-click="pills[0].active = true">Select second pill</a></li>
+                <li><a href="" class="btn btn-default btn-sm" ng-click="pills[1].active = true">Select third pill</a></li>
+                <li><a href="" class="btn btn-default btn-sm" ng-click="pills[1].disabled = ! pills[1].disabled">Enable / Disable third pill</a></li>
+              </ul>
+
+              <div class="clearfix"></div>
+
+              <h4 class="custom-font"><strong>Normal</strong> Pills</h4>
+
+              <tabset class="pills" type="pills">
+
+                <tab heading="Static title">Static content</tab>
+
+                <tab ng-repeat="pill in pills" heading="{{pill.title}}" active="pill.active" disabled="pill.disabled">
+                  {{pill.content}}
+                </tab>
+
+                <tab select="alertMe()">
+                  <tab-heading>
+                    <i class="glyphicon glyphicon-bell"></i> Alert!
+                  </tab-heading>
+                  I've got an HTML heading, and a select callback. Pretty cool!
+                </tab>
+
+              </tabset>
+
+              <h4 class="custom-font"><strong>Justified</strong> Pills</h4>
+
+              <tabset justified="true" type="pills">
+                <tab heading="Justified">Justified content</tab>
+                <tab heading="SJ">Short Labeled Justified content</tab>
+                <tab heading="Long Justified">Long Labeled Justified content</tab>
+              </tabset>
+
+              <h4 class="custom-font"><strong>Vertical</strong> Pills</h4>
+
+              <tabset vertical="true" type="pills">
+                <tab heading="Vertical 1">Vertical content 1</tab>
+                <tab heading="Vertical 2">Vertical content 2</tab>
+              </tabset>
+
+            </div>
+
+
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+
+      </div>
+      <!-- /col -->
+
+
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen02">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Tab </strong>Navigation </h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+
+
+            <div ng-controller="TabsDemoCtrl">
+
+              <p>Select a tab by setting active binding to true:</p>
+
+              <ul class="nav tile-nav">
+                <li><a href="" class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</a></li>
+                <li><a href="" class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</a></li>
+                <li><a href="" class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tabb</a></li>
+              </ul>
+
+              <div class="clearfix"></div>
+
+              <h4 class="custom-font"><strong>Normal</strong> Tabs</h4>
+
+              <tabset class="tabs-dark">
+
+                <tab heading="Static title">Static content</tab>
+
+                <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
+                  {{tab.content}}
+                </tab>
+
+                <tab select="alertMe()">
+                  <tab-heading>
+                    <i class="glyphicon glyphicon-bell"></i> Alert!
+                  </tab-heading>
+                  I've got an HTML heading, and a select callback. Pretty cool!
+                </tab>
+
+              </tabset>
+
+              <tabset class="mb-20">
+
+                <tab heading="Tab 1 title">Tab 1 content</tab>
+                <tab heading="Tab 2 title">Tab 2 content</tab>
+                <tab heading="Tab 3 title">Tab 3 content</tab>
+
+              </tabset>
+
+              <h4 class="custom-font"><strong>Justified</strong> Tabs</h4>
+
+              <tabset class="tabs-dark" justified="true">
+                <tab heading="Justified">Justified content</tab>
+                <tab heading="SJ">Short Labeled Justified content</tab>
+                <tab heading="Long Justified">Long Labeled Justified content</tab>
+              </tabset>
+
+              <tabset justified="true">
+                <tab heading="Justified">Justified content</tab>
+                <tab heading="SJ">Short Labeled Justified content</tab>
+                <tab heading="Long Justified">Long Labeled Justified content</tab>
+              </tabset>
+
+              <h4 class="custom-font"><strong>Vertical</strong> Tabs</h4>
+
+              <div class="row">
+                <div class="col-md-3 col-sm-3">
+                  <ul class="tabs-menu">
+                    <li class="active"><a href="#tab_1" native-tab>1. General Questions</a></li>
+                    <li><a href="#tab_2" native-tab>2. Membership</a></li>
+                    <li><a href="#tab_3" native-tab>3. Terms Of Service</a></li>
+                    <li><a href="#tab_1" native-tab>4. License Terms</a></li>
+                    <li><a href="#tab_2" native-tab>5. Payment Rules</a></li>
+                    <li><a href="#tab_3" native-tab>6. Other Questions</a></li>
+                  </ul>
+                </div>
+
+                <div class="col-md-9 col-sm-9">
+                  <div class="tab-content">
+
+                    <!-- START TAB 1 -->
+                    <div class="tab-pane fade in active" id="tab_1">
+                      Lorem Ipsum Dolor Sit Amet
+                    </div>
+                    <!-- END TAB 1 -->
+
+                    <!-- START TAB 2 -->
+                    <div class="tab-pane fade" id="tab_2">
+                      Lorem Ipsum Dolor Sit Amet
+                    </div>
+                    <!-- END TAB 2 -->
+
+                    <!-- START TAB 3 -->
+                    <div class="tab-pane fade" id="tab_3">
+                      Lorem Ipsum Dolor Sit Amet
+                    </div>
+                    <!-- END TAB 3 -->
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen04">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Breadcrumbs</strong> Navigation</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+
+            <ol class="breadcrumb">
+              <li class="active">Home</li>
+            </ol>
+
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li class="active">Library</li>
+            </ol>
+
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Library</a></li>
+              <li class="active">Data</li>
+            </ol>
+
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+
+      </div>
+      <!-- /col -->
+
+    </div>
+    <!-- /row -->
+
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

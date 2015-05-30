@@ -1,0 +1,21 @@
+ul.abn-tree li.abn-tree-row {
+  a {
+    border-radius: 0;
+    color: $font-color;
+
+    &:hover,&:focus {
+      background-color: #f2f2f2;
+      color: $font-color-dark;
+    }
+  }
+  &.active {
+    a {
+      color: white;
+
+      &:hover,&:focus {
+        background-color: $darken-primary;
+        color: white;
+      }
+    }
+  }
+}

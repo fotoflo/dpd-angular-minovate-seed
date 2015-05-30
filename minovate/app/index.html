@@ -1,0 +1,236 @@
+<!doctype html>
+<html ng-app="minovateApp" ng-controller="MainCtrl" class="no-js {{containerClass}}">
+  <head>
+    <meta charset="utf-8">
+    <title>Minovate - Admin Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.css" />
+    <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css" />
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.min.css" />
+    <link rel="stylesheet" href="bower_components/simple-line-icons/css/simple-line-icons.css" />
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css" />
+    <link rel="stylesheet" href="bower_components/chosen/chosen.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-colorpicker/css/colorpicker.css" />
+    <link rel="stylesheet" href="bower_components/ngImgCrop/compile/minified/ng-img-crop.css" />
+    <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="bower_components/ng-table/ng-table.css" />
+    <link rel="stylesheet" href="bower_components/morrisjs/morris.css" />
+    <link rel="stylesheet" href="bower_components/rickshaw/rickshaw.min.css" />
+    <link rel="stylesheet" href="bower_components/owl-carousel/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="bower_components/owl-carousel/owl-carousel/owl.theme.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/fullcalendar.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body id="minovate" class="{{main.settings.navbarHeaderColor}} {{main.settings.activeColor}} {{containerClass}}" ng-class="{'header-fixed':main.settings.headerFixed, 'header-static':!main.settings.headerFixed, 'aside-fixed':main.settings.asideFixed, 'aside-static':!main.settings.asideFixed, 'rightbar-show':main.settings.rightbarShow, 'rightbar-hidden':!main.settings.rightbarShow }">
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Application content -->
+    <div id="wrap" ui-view autoscroll="false"></div>
+
+    <!-- Page Loader -->
+    <div id="pageloader" page-loader></div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+    <script src='//maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&sensor=false&language=en&v=3.17'></script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-fontawesome/dist/angular-fontawesome.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/jquery.slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="bower_components/jquery.sparkline/index.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="bower_components/ng-bs-daterangepicker/src/ng-bs-daterangepicker.js"></script>
+    <script src="bower_components/angular-momentjs/angular-momentjs.js"></script>
+    <script src="bower_components/angular-fullscreen/src/angular-fullscreen.js"></script>
+    <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.js"></script>
+    <script src="bower_components/html.sortable/dist/html.sortable.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js"></script>
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="bower_components/chosen/chosen.jquery.min.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
+    <script src="bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js"></script>
+    <script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
+    <script src="bower_components/ngImgCrop/compile/minified/ng-img-crop.js"></script>
+    <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.min.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.min.js"></script>
+    <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="bower_components/ng-table/ng-table.js"></script>
+    <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+    <script src="bower_components/raphael/raphael.js"></script>
+    <script src="bower_components/mocha/mocha.js"></script>
+    <script src="bower_components/morrisjs/morris.js"></script>
+    <script src="bower_components/flot/jquery.flot.js"></script>
+    <script src="bower_components/flot/jquery.flot.resize.js"></script>
+    <script src="bower_components/flot.tooltip/js/jquery.flot.tooltip.js"></script>
+    <script src="bower_components/angular-flot/angular-flot.js"></script>
+    <script src="bower_components/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/rickshaw/rickshaw.js"></script>
+    <script src="bower_components/angular-rickshaw/rickshaw.js"></script>
+    <script src="bower_components/owl-carousel/owl-carousel/owl.carousel.min.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/fullcalendar/fullcalendar.js"></script>
+    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script src="bower_components/jquery.easy-pie-chart/dist/angular.easypiechart.min.js"></script>
+    <!-- endbower -->
+
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/app.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/directives/navcollapse.js"></script>
+    <script src="scripts/directives/slimscroll.js"></script>
+    <script src="scripts/controllers/navbar-chart.js"></script>
+    <script src="scripts/directives/sparkline.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/directives/collapsesidebar.js"></script>
+    <script src="scripts/directives/ripple.js"></script>
+    <script src="scripts/controllers/nav.js"></script>
+    <script src="scripts/directives/pageloader.js"></script>
+    <script src="scripts/controllers/daterangepicker.js"></script>
+    <script src="scripts/directives/daterangepicker.js"></script>
+    <script src="scripts/controllers/boxedlayout.js"></script>
+    <script src="scripts/controllers/fullwidthlayout.js"></script>
+    <script src="scripts/controllers/sidebarsmlayout.js"></script>
+    <script src="scripts/controllers/sidebarxslayout.js"></script>
+    <script src="scripts/controllers/hzmenu.js"></script>
+    <script src="scripts/controllers/rtl.js"></script>
+    <script src="scripts/controllers/ui-typography.js"></script>
+    <script src="scripts/directives/tilecontrolclose.js"></script>
+    <script src="scripts/directives/tilecontroltoggle.js"></script>
+    <script src="scripts/directives/tilecontrolrefresh.js"></script>
+    <script src="scripts/directives/tilecontrolfullscreen.js"></script>
+    <script src="scripts/directives/prettyprint.js"></script>
+    <script src="scripts/controllers/ui-lists.js"></script>
+    <script src="scripts/directives/lazymodel.js"></script>
+    <script src="scripts/controllers/ui-buttonsicons.js"></script>
+    <script src="scripts/directives/activatebutton.js"></script>
+    <script src="scripts/controllers/ui-navs.js"></script>
+    <script src="scripts/controllers/ui-modals.js"></script>
+    <script src="scripts/controllers/ui-tiles.js"></script>
+    <script src="scripts/controllers/ui-portlets.js"></script>
+    <script src="scripts/controllers/ui-grid.js"></script>
+    <script src="scripts/controllers/ui-alerts.js"></script>
+    <script src="scripts/directives/toastrinject.js"></script>
+    <script src="scripts/controllers/ui-general.js"></script>
+    <script src="scripts/directives/setnganimate.js"></script>
+    <script src="scripts/controllers/ui-tree.js"></script>
+    <script src="scripts/controllers/forms-common.js"></script>
+    <script src="scripts/controllers/forms-validate.js"></script>
+    <script src="scripts/directives/onblurvalidation.js"></script>
+    <script src="scripts/directives/formsubmit.js"></script>
+    <script src="scripts/controllers/forms-wizard.js"></script>
+    <script src="scripts/controllers/form-upload.js"></script>
+    <script src="scripts/controllers/form-img-crop.js"></script>
+    <script src="scripts/controllers/tables-bootstrap.js"></script>
+    <script src="scripts/directives/check-toggler.js"></script>
+    <script src="scripts/controllers/tables-datatables.js"></script>
+    <script src="scripts/controllers/tables-ui-grid.js"></script>
+    <script src="scripts/controllers/tables-ng-table.js"></script>
+    <script src="scripts/controllers/tables-smart-table.js"></script>
+    <script src="scripts/controllers/tables-footable.js"></script>
+    <script src="scripts/controllers/charts.js"></script>
+    <script src="scripts/directives/chart-morris.js"></script>
+    <script src="scripts/directives/gaugechart.js"></script>
+    <script src="scripts/directives/wrap-owlcarousel.js"></script>
+    <script src="scripts/directives/todofocus.js"></script>
+    <script src="scripts/directives/todoescape.js"></script>
+    <script src="scripts/directives/clock.js"></script>
+    <script src="scripts/controllers/ui-widgets.js"></script>
+    <script src="scripts/directives/active-toggle.js"></script>
+    <script src="scripts/directives/vector-map.js"></script>
+    <script src="scripts/controllers/maps-vector-map.js"></script>
+    <script src="scripts/controllers/maps-google-map.js"></script>
+    <script src="scripts/controllers/calendar.js"></script>
+    <script src="scripts/controllers/mail-inbox.js"></script>
+    <script src="scripts/controllers/mail-compose.js"></script>
+    <script src="scripts/controllers/mail-single.js"></script>
+    <script src="scripts/controllers/mail.js"></script>
+    <script src="scripts/controllers/pages-login.js"></script>
+    <script src="scripts/controllers/pages-signup.js"></script>
+    <script src="scripts/controllers/pages-forgot-password.js"></script>
+    <script src="scripts/controllers/pages-gallery.js"></script>
+    <script src="scripts/controllers/pages-timeline.js"></script>
+    <script src="scripts/controllers/pages-chat.js"></script>
+    <script src="scripts/controllers/pages-search-results.js"></script>
+    <script src="scripts/controllers/pages-profile.js"></script>
+    <script src="scripts/controllers/help.js"></script>
+    <script src="scripts/directives/anchor-scroll.js"></script>
+    <script src="scripts/controllers/shop-orders.js"></script>
+    <script src="scripts/controllers/shop-products.js"></script>
+    <script src="scripts/controllers/shop-invoices.js"></script>
+    <script src="scripts/controllers/shop-single-order.js"></script>
+    <script src="scripts/controllers/shop-single-product.js"></script>
+    <script src="scripts/controllers/shop-single-invoice.js"></script>
+    <script src="scripts/controllers/offcanvaslayout.js"></script>
+    <script src="scripts/directives/offcanvas-sidebar.js"></script>
+    <script src="scripts/directives/submitvalidate.js"></script>
+    <script src="scripts/directives/native-tab.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

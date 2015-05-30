@@ -1,0 +1,428 @@
+<div class="page page-alerts">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">UI Kit</a>
+        </li>
+        <li>
+          <a ui-sref="app.ui.alerts">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+    <!-- row -->
+    <div class="row">
+
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Alert</strong> Types</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+            <div class="alert alert-warning alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <strong>Warning!</strong> This is the dismissable alert dialog.
+            </div>
+
+            <div class="alert alert-success">
+              <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
+            </div>
+
+            <div class="alert alert-cyan">
+              <strong>Heads up!</strong> This alert have <a href="#" class="alert-link">class</a> <em>.alert-cyan</em>.
+            </div>
+
+            <div class="alert alert-big alert-lightred alert-dismissable fade in">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <h4><strong>Heads up!</strong> This alert have class <em>.alert-lightred</em></h4>
+              <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+              <p>
+                <button type="button" class="btn btn-danger">Take this action</button>
+                <button type="button" class="btn btn-default">Or do this</button>
+              </p>
+            </div>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+      </div>
+      <!-- /col -->
+
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen02">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Alerts</strong> API</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <div ng-controller="AlertDemoCtrl">
+
+              <div id="alertsPlaceholder">
+                <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)" class="{{alert.closeable ? 'closeable' : 'notcloseable'}}">
+                  <i class="fa {{alert.icon}}"></i> {{alert.msg}}
+                </alert>
+              </div>
+
+              <form class="form-horizontal" role="form">
+
+                <div class="form-group">
+                  <label for="alertMsg" class="col-sm-4 control-label">Alert Message:</label>
+                  <div class="col-sm-8">
+                    <input ng-model="alertOptions.msg" type="text" class="form-control" id="alertMsg" placeholder="Enter alert message...">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="alertType">Alert Type:</label>
+                  <div class="col-sm-8">
+                    <select ng-model="alertType" id="alertType" ng-options="color.name for color in alertOptions.colors" class="form-control"></select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="alertDuration">Duration:</label>
+                  <div class="col-sm-8">
+                    <select ng-model="alertDuration" id="alertDuration" ng-options="duration.name for duration in alertOptions.durations" class="form-control"></select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="alertIcon">Icon:</label>
+                  <div class="col-sm-8">
+                    <select ng-model="alertIcon" id="alertIcon" ng-options="icon.name for icon in alertOptions.icons" class="form-control"></select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="closeable">Closeable ?:</label>
+                  <div class="col-sm-8">
+                    <label class="checkbox checkbox-custom checkbox-custom-sm">
+                      <input id="closeable" ng-model="alertCloseable" type="checkbox"><i></i>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="closeall">Close all previous:</label>
+                  <div class="col-sm-8">
+                    <label class="checkbox checkbox-custom checkbox-custom-sm">
+                      <input id="closeall" ng-model="alertCloseAll" type="checkbox"><i></i>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="autoscroll">Auto Scroll/Focus:</label>
+                  <div class="col-sm-8">
+                    <label class="checkbox checkbox-custom checkbox-custom-sm">
+                      <input id="autoscroll" ng-model="alertFocus" type="checkbox"><i></i>
+                    </label>
+                  </div>
+                </div>
+
+                <button class="btn btn-default" ng-click="showAlert()">Show Alert</button>
+
+              </form>
+
+            </div>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+      </div>
+      <!-- /col -->
+
+
+
+    </div>
+    <!-- /row -->
+
+
+    <!-- row -->
+    <div class="row">
+      <!-- col -->
+      <div class="col-md-12">
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen03">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Toastr </strong>Notifications</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body" ng-controller="ToasterDemoCtrl">
+
+            <form role="form">
+              <div class="row">
+
+                <!-- col -->
+                <div class="col-md-4">
+
+                  <div class="form-group">
+                    <label for="toastTitle" class="control-label">Toast Title:</label>
+                    <input ng-model="toast.title" type="text" class="form-control" id="toastTitle" placeholder="Enter toaster title...">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="toastMsg" class="control-label">Toast Message:</label>
+                    <input ng-model="toast.msg" type="text" class="form-control" id="toastMsg" placeholder="Enter toaster message...">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="toastButton">Close button html:</label>
+                    <input type="text" ng-model="options.closeHtml" class="form-control" id="toastbutton" ng-disabled="!options.closeButton">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="checkbox checkbox-custom checkbox-custom-sm">
+                      <input type="checkbox" ng-model="options.tapToDismiss"><i></i> Tap to dismiss?
+                    </label>
+                    <label class="checkbox checkbox-custom checkbox-custom-sm">
+                      <input type="checkbox" ng-model="options.closeButton"><i></i> Close button?
+                    </label>
+                    <label class="checkbox checkbox-custom checkbox-custom-sm">
+                      <input type="checkbox" ng-model="options.html"><i></i> Allow html?
+                    </label>
+                  </div>
+
+                </div>
+                <!-- /col -->
+
+
+                <!-- col -->
+                <div class="col-md-4">
+
+                  <div class="form-group">
+                    <label class="control-label" for="toastType">Toast Type:</label>
+                    <select ng-model="options.iconClass" id="toastType" ng-options="color.name for color in toast.colors" class="form-control"></select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label" for="toastIcon">Icon Type:</label>
+                    <select ng-model="options.iconType" id="toastIcon" ng-options="icon.name for icon in toast.icons" class="form-control"></select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Toast position</label>
+                    <label class="radio checkbox-custom checkbox-custom-sm">
+                      <input type="radio" ng-model="options.position" value="toast-top-right"><i></i> Top Right
+                    </label>
+                    <label class="radio checkbox-custom checkbox-custom-sm">
+                      <input type="radio" ng-model="options.position" value="toast-bottom-right"><i></i> Bottom Right
+                    </label>
+                    <label class="radio checkbox-custom checkbox-custom-sm">
+                      <input type="radio" ng-model="options.position" value="toast-bottom-left"><i></i> Bottom Left
+                    </label>
+                    <label class="radio checkbox-custom checkbox-custom-sm">
+                      <input type="radio" ng-model="options.position" value="toast-top-left"><i></i> Top Left
+                    </label>
+                    <label class="radio checkbox-custom checkbox-custom-sm">
+                      <input type="radio" ng-model="options.position" value="toast-top-full-width"><i></i> Top Full Width
+                    </label>
+                    <label class="radio checkbox-custom checkbox-custom-sm">
+                      <input type="radio" ng-model="options.position" value="toast-bottom-full-width"><i></i> Bottom Full Width
+                    </label>
+                  </div>
+
+                </div>
+                <!-- /col -->
+
+
+                <!-- col -->
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="toastTimeout">Timeout:</label>
+                    <input type="text" ng-model="options.timeout" class="form-control" id="toastTimeout">
+                    <em>If you set it to 0, it will stick</em>
+                  </div>
+                  <div class="form-group">
+                    <label for="toastExtendedTimeout">Extended timeout:</label>
+                    <input type="text" ng-model="options.extendedTimeout" class="form-control" id="toastExtendedTimeout">
+                  </div>
+                </div>
+                <!-- /col -->
+
+
+              </div>
+              <div class="row">
+                <!-- col -->
+                <div class="col-md-12">
+                  <button ng-click="openToast()" class="btn btn-primary">Open Toast</button>
+                  <button ng-click="clearToasts()" class="btn btn-danger">Clear Toasts</button>
+                  <button ng-click="clearLastToast()" class="btn btn-danger">Clear Last Toast</button>
+                </div>
+                <!-- /col -->
+              </div>
+            </form>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+      </div>
+      <!-- /col -->
+    </div>
+    <!-- /row -->
+
+
+
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

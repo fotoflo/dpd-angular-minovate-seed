@@ -1,0 +1,6 @@
+/minovate/.*
+/.dpd
+/data
+/minovate/bower_components
+/minovate/node_modules
+/minovate.zip

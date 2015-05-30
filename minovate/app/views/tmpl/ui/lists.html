@@ -1,0 +1,672 @@
+<div class="page page-lists">
+
+
+
+
+  <!-- page header -->
+  <div class="pageheader">
+
+    <h2>{{page.title}} <span>// {{page.subtitle}}</span></h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="app.dashboard"><i class="fa fa-home"></i> {{main.title}}</a>
+        </li>
+        <li>
+          <a href="javascript:;">UI Kit</a>
+        </li>
+        <li>
+          <a ui-sref="app.ui.lists">{{page.title}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!-- /page header -->
+
+
+
+
+
+
+  <!-- page content -->
+  <div class="pagecontent">
+
+
+
+
+
+    <!-- row -->
+    <div class="row">
+
+
+      <!-- col -->
+      <div class="col-md-12">
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen01">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Predefined </strong> Lists</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen01 = !isFullscreen01">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <div class="row">
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">Ordered List</p>
+                <ol>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ol>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">Unordered List</p>
+                <ul>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">Unstyled List</p>
+                <ul class="list-unstyled">
+                  <li>List item</li>
+                  <li>List item
+                    <ul>
+                      <li>List item</li>
+                      <li>List item</li>
+                    </ul>
+                  </li>
+                  <li>List item</li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">Inline List</p>
+                <ul class="list-inline">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen02">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Custom </strong> Lists</h1>
+            <span class="note"><strong>ul</strong> with class <em>list-type arrow/circle/check/caret</em></span>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen02 = !isFullscreen02">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <div class="row">
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">List type arrow</p>
+                <ul class="list-type arrow">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">List type circle</p>
+                <ul class="list-type circle">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">List type check</p>
+                <ul class="list-type check">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">List type caret-right</p>
+                <ul class="list-type caret-right">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen03">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Custom </strong> Lists</h1>
+            <span class="note"><strong>ul</strong> with class <em>fa-ul</em></span>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen03 = !isFullscreen03">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <div class="row">
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">List type check</p>
+                <ul class="fa-ul">
+                  <li><i class="fa-li fa fa-check-square"></i>List item</li>
+                  <li><i class="fa-li fa fa-check-square"></i>List item
+                    <ul class="fa-ul">
+                      <li><i class="fa-li fa fa-check-square"></i>List item</li>
+                      <li><i class="fa-li fa fa-check-square"></i>List item</li>
+                      <li><i class="fa-li fa fa-check-square"></i>List item</li>
+                    </ul>
+                  </li>
+                  <li><i class="fa-li fa fa-check-square"></i>List item</li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">List type spinner</p>
+                <ul class="fa-ul">
+                  <li><i class="fa-li fa fa-spinner fa-spin"></i>List item</li>
+                  <li><i class="fa-li fa fa-spinner fa-spin"></i>List item
+                    <ul class="fa-ul">
+                      <li><i class="fa-li fa fa-spinner fa-spin"></i>List item</li>
+                      <li><i class="fa-li fa fa-spinner fa-spin"></i>List item</li>
+                      <li><i class="fa-li fa fa-spinner fa-spin"></i>List item</li>
+                    </ul>
+                  </li>
+                  <li><i class="fa-li fa fa-spinner fa-spin"></i>List item</li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">List type square</p>
+                <ul class="fa-ul">
+                  <li><i class="fa-li fa fa-square"></i>List item</li>
+                  <li><i class="fa-li fa fa-square"></i>List item
+                    <ul class="fa-ul">
+                      <li><i class="fa-li fa fa-square"></i>List item</li>
+                      <li><i class="fa-li fa fa-square"></i>List item</li>
+                      <li><i class="fa-li fa fa-square"></i>List item</li>
+                    </ul>
+                  </li>
+                  <li><i class="fa-li fa fa-square"></i>List item</li>
+                </ul>
+              </div>
+
+              <div class="col-md-3 col-sm-6">
+                <p class="text-small text-strong text-uppercase custom-font">List type cross</p>
+                <ul class="fa-ul">
+                  <li><i class="fa-li fa fa-times"></i>List item</li>
+                  <li><i class="fa-li fa fa-times"></i>List item
+                    <ul class="fa-ul">
+                      <li><i class="fa-li fa fa-times"></i>List item</li>
+                      <li><i class="fa-li fa fa-times"></i>List item</li>
+                      <li><i class="fa-li fa fa-times"></i>List item</li>
+                    </ul>
+                  </li>
+                  <li><i class="fa-li fa fa-times"></i>List item</li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen04">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>List </strong> Groups</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen04 = !isFullscreen04">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+            <div class="row">
+
+              <div class="col-lg-3 col-md-6">
+
+                <h4 class="custom-font"><strong>Basic</strong> example</h4>
+
+                <ul class="list-group">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Morbi leo risus</li>
+                  <li class="list-group-item">Porta ac consectetur ac</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+
+                <h4 class="custom-font"><strong>Badges</strong> example</h4>
+
+                <ul class="list-group">
+                  <li class="list-group-item"><span class="badge bg-red">14</span> Cras justo odio</li>
+                  <li class="list-group-item"><span class="badge bg-cyan">12</span> Dapibus ac facilisis in</li>
+                  <li class="list-group-item"><span class="badge bg-greensea">26</span> Morbi leo risus</li>
+                  <li class="list-group-item"><span class="badge bg-hotpink">19</span> Porta ac consectetur ac</li>
+                  <li class="list-group-item"><span class="badge bg-green">36</span> Vestibulum at eros</li>
+                </ul>
+
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+
+                <h4 class="custom-font"><strong>Custom classes</strong> example</h4>
+
+                <div class="list-group">
+                  <a href="#" class="list-group-item active">
+                    Linked Item
+                  </a>
+                  <a href="#" class="list-group-item disabled">Disabled Item</a>
+                  <a href="#" class="list-group-item list-group-item-success">Contextual Class</a>
+                  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                  <a href="#" class="list-group-item">Vestibulum at eros</a>
+                </div>
+
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+
+                <h4 class="custom-font"><strong>Custom content</strong> example</h4>
+
+                <div class="list-group">
+                  <a href="#" class="list-group-item active">
+                    <h4 class="list-group-item-heading custom-font text-strong">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading custom-font text-strong">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                  </a>
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading custom-font text-strong">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                  </a>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+
+      </div>
+      <!-- /col -->
+
+
+    </div>
+    <!-- /row -->
+
+
+
+    <!-- row -->
+    <div class="row">
+
+
+
+
+      <!-- col -->
+      <div class="col-md-6">
+
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen05">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Nestable </strong> List 1</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen05 = !isFullscreen05">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+            <ul class="nav tile-nav pull-right">
+              <li><a href class="btn btn-default" ng-click="collapseAll($event)">Collapse all</a></li>
+              <li><a href class="btn btn-default" ng-click="expandAll($event)">Expand all</a></li>
+            </ul>
+
+            <div class="clearfix"></div>
+
+            <!-- Nested list template -->
+            <script type="text/ng-template" id="items_renderer.html">
+              <div ui-tree-handle class="tree-node">
+                <a class="btn" data-nodrag ng-click="toggle(this)"><i class="fa fa-angle-down" ng-class="{'fa-angle-right': collapsed, 'fa-angle-down': !collapsed}"></i></a>
+                {{item.title}}
+                <a class="pull-right btn remove" data-nodrag ng-click="remove(this)"><i class="fa fa-times"></i></a>
+                <a class="pull-right btn add" data-nodrag ng-click="newSubItem(this)"><i class="fa fa-plus"></i></a>
+              </div>
+              <ol ui-tree-nodes="options" ng-model="item.items" ng-class="{hidden: collapsed}">
+                <li ng-repeat="item in item.items" ui-tree-node ng-include="'items_renderer.html'">
+                </li>
+              </ol>
+            </script>
+
+            <div ui-tree="options" id="tree-root">
+              <ol ui-tree-nodes ng-model="list">
+                <li ng-repeat="item in list" ui-tree-node ng-include="'items_renderer.html'"></li>
+              </ol>
+            </div>
+
+            <h4 class="custom-font"><strong>Full</strong> tree</h4>
+            <pre class="code">{{ list }}</pre>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+
+      </div>
+      <!-- /col -->
+
+
+
+
+
+      <!-- col -->
+      <div class="col-md-6">
+        <!-- tile -->
+        <section class="tile" fullscreen="isFullscreen06">
+
+          <!-- tile header -->
+          <div class="tile-header dvd dvd-btm">
+            <h1 class="custom-font"><strong>Nestable </strong> List 2</h1>
+            <ul class="controls">
+              <li class="dropdown" dropdown on-toggle="toggled(open)">
+
+                <a href dropdown-toggle class="dropdown-toggle settings"><i class="fa fa-cog"></i></a>
+
+                <ul class="dropdown-menu pull-right with-arrow animated littleFadeInUp">
+                  <li>
+                    <a href tile-control-toggle>
+                      <span class="minimize"><fa name="angle-down"></fa>&nbsp;&nbsp;&nbsp;Minimize</span>
+                      <span class="expand"><fa name="angle-up"></fa>&nbsp;&nbsp;&nbsp;Expand</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-refresh ng-click="ajaxFaker()">
+                      <fa name="refresh"></fa> Refresh
+                    </a>
+                  </li>
+                  <li>
+                    <a href tile-control-fullscreen ng-click="isFullscreen06 = !isFullscreen06">
+                      <fa name="expand"></fa> Fullscreen
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+              <li class="remove"><a href tile-control-close><i class="fa fa-times"></i></a></li>
+            </ul>
+          </div>
+          <!-- /tile header -->
+
+          <!-- tile body -->
+          <div class="tile-body">
+
+            <ul class="nav tile-nav pull-right">
+              <li><a href class="btn btn-default" ng-click="collapseAll($event)">Collapse all</a></li>
+              <li><a href class="btn btn-default" ng-click="expandAll($event)">Expand all</a></li>
+            </ul>
+
+            <div class="clearfix"></div>
+
+            <!-- Nested list template -->
+            <script type="text/ng-template" id="items_renderer2.html">
+              <div class="tree-node" ng-show="!item.editing">
+                <div class="pull-left tree-handle" ui-tree-handle>
+                  <i class="fa fa-list"></i>
+                </div>
+                <div class="tree-node-content">
+                  <a class="btn" data-nodrag ng-click="toggle(this)"><i class="fa fa-angle-down" ng-class="{'fa-angle-right': collapsed, 'fa-angle-down': !collapsed}"></i></a>
+                {{item.title}}
+                <a class="pull-right btn remove" data-nodrag ng-click="remove(this)"><i class="fa fa-times"></i></a>
+                <a class="pull-right btn add" data-nodrag ng-click="newSubItem(this)"><i class="fa fa-plus"></i></a>
+                <a class="pull-right btn edit" data-nodrag ng-click="item.editing = !item.editing"><i class="fa fa-edit"></i></a>
+                </div>
+              </div>
+              <div class="tree-node" data-nodrag ng-show="item.editing">
+                <form class="form-inline" role="form">
+                  <div class="form-group">
+                    <label class="sr-only" for="itemTitle">Item title</label>
+                    <input type="text" class="form-control input-sm" placeholder="Item title" lazy-model="item.title" id="itemTitle">
+                  </div>
+                  <button type="submit" class="btn btn-default btn-sm" ng-click="item.editing = false">Save</button>
+                  <button type="reset" class="btn btn-default btn-sm" ng-click="item.editing = false">Cancel</button>
+                </form>
+              </div>
+              <ol ui-tree-nodes="" ng-model="item.items" ng-class="{hidden: collapsed}">
+                <li ng-repeat="item in item.items" ui-tree-node ng-include="'items_renderer2.html'">
+                </li>
+              </ol>
+            </script>
+
+            <div ui-tree>
+              <ol ui-tree-nodes="" ng-model="list2">
+                <li ng-repeat="item in list2" ui-tree-node ng-include="'items_renderer2.html'"></li>
+              </ol>
+            </div>
+
+            <h4 class="custom-font"><strong>Full</strong> tree</h4>
+            <pre class="code">{{ list2 }}</pre>
+
+          </div>
+          <!-- /tile body -->
+
+        </section>
+        <!-- /tile -->
+      </div>
+      <!-- /col -->
+
+    </div>
+    <!-- /row -->
+
+
+
+
+
+
+  </div>
+  <!-- /page content -->
+
+
+
+
+</div>

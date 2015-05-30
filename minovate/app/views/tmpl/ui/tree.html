@@ -1,0 +1,59 @@
+<div class="page page-tree" ng-controller="AbnTestController">
+
+
+  <div class="tbox tbox-sm">
+
+
+    <div class="tcol w-lg b-r bg-default lter">
+      <div class="p-20">
+
+        <button ng-click="try_changing_the_tree_data()" class="btn btn-default btn-block">Change The Tree Definition</button>
+        <button ng-click="try_async_load()" class="btn btn-default btn-block">Load Tree Data Asynchronously</button>
+
+        <hr class="b-0 b-b"/>
+
+        <h5>Test the Tree Control API:</h5>
+
+        <button ng-click="my_tree.select_first_branch()" class="btn btn-default btn-sm mb-10">First Branch</button>
+        <br>
+        <button ng-click="my_tree.select_next_sibling()" class="btn btn-default btn-sm mb-10">Next Sibling</button>
+        <button ng-click="my_tree.select_prev_sibling()" class="btn btn-default btn-sm mb-10">Prev Sibling</button>
+        <br>
+        <button ng-click="my_tree.select_next_branch()" class="btn btn-default btn-sm mb-10">Next Branch</button>
+        <button ng-click="my_tree.select_prev_branch()" class="btn btn-default btn-sm mb-10">Prev Branch</button>
+        <br>
+        <button ng-click="my_tree.select_parent_branch()" class="btn btn-default btn-sm mb-10">Parent</button>
+
+        <hr class="b-0 b-b"/>
+
+        <button ng-click="my_tree.expand_branch()" class="btn btn-default btn-sm mb-10">Expand</button>
+        <button ng-click="my_tree.collapse_branch()" class="btn btn-default btn-sm mb-10">Collapse</button><br/>
+        <button ng-click="my_tree.expand_all()" class="btn btn-default btn-sm mb-10">Expand All</button>
+        <button ng-click="my_tree.collapse_all()" class="btn btn-default btn-sm mb-10">Collapse All</button>
+
+        <hr class="b-0 b-b"/>
+        <button ng-click="try_adding_a_branch()" class="btn btn-greensea btn-sm">Add Branch</button>
+
+      </div>
+    </div>
+
+    <div class="tcol">
+      <div class="p-20">
+        <span ng-if="doing_async">...loading...</span>
+        <div class="b-a bg-default lter">
+          <abn-tree tree-data="my_data" tree-control="my_tree" on-select="my_tree_handler(branch)" expand-level="2" initial-selection="Granny Smith" icon-leaf="fa fa-file-o" icon-expand="fa fa-plus" icon-collapse="fa fa-minus"></abn-tree>
+        </div>
+      </div>
+    </div>
+
+    <div class="tcol">
+      <div class="p-20">
+        <div class="alert alert-info">{{ output }}</div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+

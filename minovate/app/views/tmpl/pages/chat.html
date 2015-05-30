@@ -1,0 +1,255 @@
+<div class="page page-full page-chat">
+
+
+  <div class="tbox tbox-sm">
+
+
+
+
+
+
+    <!-- left side -->
+    <div class="tcol w-xl bg-tr-white lt b-r">
+
+
+
+
+
+
+
+
+      <!-- left side header-->
+      <div class="p-15 bg-white">
+
+        <h3 class="custom-font m-0 mr-5 inline-block">Inbox</h3><span class="badge bg-lightred">3</span>
+
+        <div class="btn-group pull-right">
+          <button class="btn btn-sm btn-default pull-right visible-sm visible-xs ml-5" active-toggle target="#open-chats"><i class="fa fa-bars"></i></button>
+          <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+            More <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- /left side header -->
+
+
+
+
+
+
+
+
+      <!-- left side body -->
+      <div class="p-15 hidden-sm hidden-xs" id="open-chats">
+
+        <input type="text" class="form-control" placeholder="Search..." ng-model="searchText">
+
+        <ul class="list-unstyled" id="inbox">
+          <li ng-repeat="message in inbox | filter:searchText" ng-class="{'active': message.active}">
+            <a href="javascript:;" class="active">
+              <div class="media">
+
+                <div class="media-left thumb thumb-sm">
+                  <img class="media-object img-circle" ng-src="{{message.avatar}}">
+                </div>
+
+                <div class="media-body">
+                  <p class="media-heading">
+                    <span ng-class="{'text-strong': message.unread}">{{message.name}}</span>
+                    <span class="badge bg-lightred" ng-show="message.unread && message.new_messages > 0">{{message.new_messages}}</span>
+                    <small class="text-muted pull-right">{{message.date}}</small>
+                  </p>
+                  <div class="chat-actions pull-right">
+                    <span class="mark-readed" tooltip="Mark as readed" ng-show="message.unread" ng-click="message.unread = false"><i class="fa fa-circle"></i></span>
+                    <span class="mark-unread" tooltip="Mark as unread" ng-hide="message.unread" ng-click="message.unread = true"><i class="fa fa-circle-o"></i></span>
+                    <span class="archive" tooltip="Archive" ng-click="archive($index)"><i class="fa fa-times"></i></span>
+                  </div>
+                  <small class="text-muted message">{{message.content}}</small>
+                </div>
+
+              </div>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- /left side body -->
+
+
+
+
+
+
+
+
+    </div>
+    <!-- /left side -->
+
+
+
+
+
+
+
+    <!-- right side -->
+    <div class="tcol">
+
+      <!-- right side header -->
+      <div class="p-15 bg-white b-b">
+
+        <div class="btn-toolbar pull-right">
+          <div class="btn-group">
+            <button class="btn btn-default btn-sm br-2"><i class="fa fa-plus"></i> New Message</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-default btn-sm br-2"><i class="fa fa-cog"></i> Settings</button>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-default btn-sm br-2"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+
+
+        <h3 class="custom-font m-0 mr-5 inline-block">Wood Walton</h3>
+
+
+      </div>
+      <!-- /right side header -->
+
+
+
+
+
+
+
+      <!-- right side body -->
+      <div class="p-15">
+
+        <!-- chats -->
+        <ul class="chats p-0">
+          <li class="text-center"><a href="javascript:;">Load More...</a></li>
+          <li class="conversation-divider"><span>Conversation started at 26.03.2014</span></li>
+          <li class="in">
+            <div class="media">
+              <div class="pull-left thumb thumb-sm">
+                <img class="media-object img-circle" src="images/random-avatar1.jpg" alt="">
+              </div>
+              <div class="media-body">
+                <p class="media-heading"><a href="#" class="name">Wood Walton </a><span class="datetime">at 12.10.2014</span></p>
+                <span class="body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</span>
+              </div>
+            </div>
+          </li>
+          <li class="conversation-divider"><span>Today</span></li>
+          <li class="out">
+            <div class="media">
+              <div class="pull-right thumb thumb-sm">
+                <img class="media-object img-circle" src="images/profile-photo.jpg" alt="">
+              </div>
+              <div class="media-body">
+                <p class="media-heading"><a href="#" class="name">You </a><span class="datetime">2 hours ago</span></p>
+                <span class="body">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</span>
+              </div>
+            </div>
+          </li>
+          <li class="in">
+            <div class="media">
+              <div class="pull-left thumb thumb-sm">
+                <img class="media-object img-circle" src="images/random-avatar1.jpg" alt="">
+              </div>
+              <div class="media-body">
+                <p class="media-heading"><a href="#" class="name">Wood Walton </a><span class="datetime">2 hours ago</span></p>
+                <span class="body">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</span>
+              </div>
+            </div>
+          </li>
+          <li class="out">
+            <div class="media">
+              <div class="pull-right thumb thumb-sm">
+                <img class="media-object img-circle" src="images/profile-photo.jpg" alt="">
+              </div>
+              <div class="media-body">
+                <p class="media-heading"><a href="#" class="name">You </a><span class="datetime">1 hours ago</span></p>
+                <span class="body">Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</span>
+              </div>
+            </div>
+          </li>
+          <li class="in">
+            <div class="media">
+              <div class="pull-left thumb thumb-sm">
+                <img class="media-object img-circle" src="images/random-avatar1.jpg" alt="">
+              </div>
+              <div class="media-body">
+                <p class="media-heading"><a href="#" class="name">Wood Walton </a><span class="datetime">53 minutes ago</span></p>
+                <span class="body">Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</span>
+              </div>
+            </div>
+          </li>
+          <li class="out">
+            <div class="media">
+              <div class="pull-right thumb thumb-sm">
+                <img class="media-object img-circle" src="images/profile-photo.jpg" alt="">
+              </div>
+              <div class="media-body">
+                <p class="media-heading"><a href="#" class="name">You </a><span class="datetime">40 minutes ago</span></p>
+                <span class="body">Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</span>
+              </div>
+            </div>
+          </li>
+          <li class="out">
+            <div class="media">
+              <div class="pull-right thumb thumb-sm">
+                <img class="media-object img-circle" src="images/profile-photo.jpg" alt="">
+              </div>
+              <div class="media-body">
+                <p class="media-heading"><a href="#" class="name">You </a><span class="datetime">39 minutes ago</span></p>
+                <span class="body">Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.</span>
+              </div>
+            </div>
+          </li>
+          <li class="out">
+            <div class="media">
+              <div class="pull-right thumb thumb-sm">
+                <img class="media-object img-circle" src="images/profile-photo.jpg" alt="">
+              </div>
+              <div class="media-body">
+                <div class="mb-40" ng-hide="post">
+                  <a href="javascript:;" ng-click="post=!post">Post</a> new message</a>
+                </div>
+                <div ng-show="post">
+                  <div class="p-15 text-left bg-white text-md" contenteditable="true" style="min-height:100px"></div>
+                  <div class="panel-footer text-left">
+                    <button class="btn btn-link text-default pull-right" ng-click="post=!post"><i class="fa fa-trash-o"></i></button>
+                    <button class="btn btn-greensea btn-ef btn-ef-7 btn-ef-7b b-0 br-2" activate-button=""><i class="fa fa-envelope"></i> Send Message</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+        <!-- / chats -->
+
+      </div>
+      <!-- /right side body -->
+
+
+    </div>
+    <!-- /right side -->
+
+
+
+  </div>
+
+
+
+</div>
+

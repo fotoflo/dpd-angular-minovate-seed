@@ -1,0 +1,73 @@
+[{
+  "id": 0,
+  "name": "Wood Walton",
+  "avatar": "images/random-avatar1.jpg",
+  "content": "Commodo sunt minim incid id unt ipsum dolore veniam nulla Lorem reprehenderit officia. Ut esse cillum quis deserunt.",
+  "date": "16:54, 24.11.2014",
+  "unread": true,
+  "new_messages": 2,
+  "active": true
+},{
+  "id": 1,
+  "name": "Lorraine Mclaughlin",
+  "avatar": "images/random-avatar2.jpg",
+  "content": "Sit nulla sint ex exercitation culpa anim aliquip. Incidid unt magna magna aute adipisicing incidid unt ullamco sint velit quis irure cillum.",
+  "date": "15:29, 24.11.2014",
+  "unread": false,
+  "new_messages": 0,
+  "active": false
+},{
+  "id": 2,
+  "name": "Cooley Pruitt",
+  "avatar": "images/random-avatar3.jpg",
+  "content": "Cillum pariatur ex ut Lorem deserunt laborum sunt duis. Et minim exercitation consequat ex sint dolore.",
+  "date": "14:18, 24.11.2014",
+  "unread": true,
+  "new_messages": 1,
+  "active": false
+},{
+  "id": 3,
+  "name": "James Mccullough",
+  "avatar": "images/random-avatar4.jpg",
+  "content": "Nulla velit commodo ea elit aute fugiat. Laboris id tempor cupidatat ullamco irure labore ad consectetur elit laborum laborum eiusmod fugiat.",
+  "date": "14:05, 24.11.2014",
+  "unread": true,
+  "new_messages": 1,
+  "active": false
+},{
+  "id": 4,
+  "name": "Neal Macdonald",
+  "avatar": "images/random-avatar5.jpg",
+  "content": "Voluptate proident ullamco labore veniam non velit. Ad ut laborum qui fugiat esse est incididunt cillum.",
+  "date": "13:26, 24.11.2014",
+  "unread": false,
+  "new_messages": 0,
+  "active": false
+},{
+  "id": 5,
+  "name": "Wells Wilder",
+  "avatar": "images/random-avatar6.jpg",
+  "content": "Magna veniam quis laboris adipisicing anim deserunt nulla dolor commodo dolor. Dolore laboris consectetur sit duis sunt aliquip cupidatat aliqua ipsum ea ad irure.",
+  "date": "12:56, 24.11.2014",
+  "unread": false,
+  "new_messages": 0,
+  "active": false
+},{
+  "id": 6,
+  "name": "Lloyd Carlson",
+  "avatar": "images/random-avatar7.jpg",
+  "content": "Eiusmod ipsum dolor laboris pariatur laborum non eu tempor id pariatur sit. In eu amet aute pariatur aliquip adipisicing qui amet reprehenderit et ut consectetur reprehenderit.",
+  "date": "10:18, 24.11.2014",
+  "unread": false,
+  "new_messages": 0,
+  "active": false
+},{
+  "id": 7,
+  "name": "Rosa Dotson",
+  "avatar": "images/random-avatar8.jpg",
+  "content": "Officia enim elit culpa irure fugiat nostrud incididunt magna cillum veniam labore sit id nulla. Sunt tempor irure aute consectetur di culpa qui fugiat culpa esse proident ad mollit dolor.",
+  "date": "06:48, 24.11.2014",
+  "unread": false,
+  "new_messages": 0,
+  "active": false
+}]
