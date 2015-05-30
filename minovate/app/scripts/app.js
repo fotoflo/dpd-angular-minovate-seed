@@ -85,6 +85,21 @@ angular
       url: '/ui',
       template: '<div ui-view></div>'
     })
+    //ui/typography
+    .state('app.ui.typography', {
+      url: '/typography',
+      controller: 'TypographyCtrl',
+      templateUrl: 'views/tmpl/ui/typography.html',
+      resolve: {
+        plugins: ['$ocLazyLoad', function($ocLazyLoad) {
+          return $ocLazyLoad.load([
+            'scripts/vendor/google-code-prettify/prettify.css',
+            'scripts/vendor/google-code-prettify/sons-of-obsidian.css',
+            'scripts/vendor/google-code-prettify/prettify.js'
+          ]);
+        }]
+      }
+    })
     //ui/lists
     .state('app.ui.lists', {
       url: '/lists',
