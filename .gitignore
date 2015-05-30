@@ -1,4 +1,5 @@
 /minovate/.*
+/minovate/app/styles/
 /.dpd
 /data
 /minovate/bower_components
