@@ -1,0 +1,13 @@
+{
+	"type": "UserCollection",
+	"properties": {
+		"logins": {
+			"name": "logins",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "logins",
+			"order": 0
+		}
+	}
+}
