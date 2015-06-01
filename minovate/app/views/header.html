@@ -1,4 +1,4 @@
-<header class="clearfix">
+<header class="clearfix" ng-controller="HeaderCtrl">
 
   <!-- Branding -->
   <div class="branding {{main.settings.brandingColor}}">
@@ -61,7 +61,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a ng-click="logout();" >
             <fa name="sign-out"></fa>Logout
           </a>
         </li>

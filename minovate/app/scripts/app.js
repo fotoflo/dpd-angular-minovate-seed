@@ -32,6 +32,16 @@ angular
     'ui.calendar'
   ])
   .run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
+
+    dpd.users.me(function(user) {
+      if (!user) {
+        location.href = "/login.html";
+      } else {
+    // set user to window.user        
+        window.user = user;
+      }
+    });
+
     $rootScope.$state = $state;
     $rootScope.$stateParams = $stateParams;
     $rootScope.$on('$stateChangeSuccess', function(event, toState) {
