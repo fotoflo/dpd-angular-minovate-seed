@@ -29,6 +29,9 @@ Basically it's a node.js REST API server that's easy as sin to use. And it suppo
 
 [Watch the YouTube video](http://www.youtube.com/watch?v=I_Jq1BVj6D0) and prepare to have your mind blown.
 
+### Support
+Deployd is bieng built and supported by an active open source community on [google groups](https://groups.google.com/forum/?fromgroups#!forum/deployd-users), [github](https://github.com/deployd/deployd) and via chat on [gitter](https://gitter.im/deployd/deployd).
+
 ## What is [Minovate?](http://themeforest.net/item/minovate-angular-admin-dashboard/full_screen_preview/10068009?ref=fotoflo)
 
 
@@ -42,7 +45,7 @@ Minovate contains many example pages with many ready to use elements and is stro
 Minovate works on every modern browser, any device and any screen size."
 
 #License 
-Please note that the full Minovate has a [paid license](http://themeforest.net/licenses/standard?license=regular&ref=fotoflo), but this seed file only has about 10% of minovate's functionality - I've removed charts and web templates, and PSDs and many other things, leaving only the 10% we web developers need most to get started. If you like Minovate, [buy it](http://themeforest.net/item/minovate-angular-admin-dashboard/10068009?ref=fotoflo) like I did, and use all the features (It's cheap).  If you use the Minovate in an commercial project, please make sure to read and abide by the license.
+Please note that the full Minovate has a [paid license](http://themeforest.net/licenses/standard?license=regular&ref=fotoflo), but this seed file only has about 10% of minovate's functionality. In this dirivitive work, I've removed charts and web templates, and PSDs and many other things, leaving only the 10% we web developers need most to get started with a new project. If you like Minovate, [buy it](http://themeforest.net/item/minovate-angular-admin-dashboard/10068009?ref=fotoflo) like I did, and use all the features (It's cheap).  If you use the Minovate in an commercial project, please make sure to read and abide by the license.
 
 #### Alternatives:
 You can try the free open source [rdash dashboard](http://rdash.github.io/)
