@@ -96,10 +96,12 @@
 
     <!-- endbuild -->
 
-    <script src="http://localhost:2403/dpd.js"></script>
-
     <!-- build:js({.tmp,app}) scripts/app.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/routes.js"></script>
+    <script src="scripts/run.js"></script>
+    <script src="scripts/dpdConfig.js"></script>
+    <script src="scripts/services/userService.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/directives/navcollapse.js"></script>
     <script src="scripts/directives/slimscroll.js"></script>
@@ -148,13 +150,11 @@
     <script src="scripts/directives/todofocus.js"></script>
     <script src="scripts/directives/todoescape.js"></script>
     <script src="scripts/directives/clock.js"></script>
-    <script src="scripts/controllers/ui-widgets.js"></script>
     <script src="scripts/directives/active-toggle.js"></script>
     <script src="scripts/controllers/calendar.js">    </script>
     <script src="scripts/controllers/pages-login.js"></script>
     <script src="scripts/controllers/pages-signup.js"></script>
     <script src="scripts/controllers/pages-forgot-password.js"></script>
-
     <script src="scripts/controllers/help.js"></script>
     <script src="scripts/directives/anchor-scroll.js"></script>
     <script src="scripts/controllers/offcanvaslayout.js"></script>
@@ -162,5 +162,6 @@
     <script src="scripts/directives/submitvalidate.js"></script>
     <script src="scripts/directives/native-tab.js"></script>
     <!-- endbuild -->
+    <script src="scripts/vendor/deployd/angular-dpd.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+(function() {
 'use strict';
 
 /**
@@ -8,12 +9,16 @@
  * Controller of the minovateApp
  */
 angular.module('minovateApp')
-  .controller('DashboardCtrl', function($scope,$http){
-    
-    $scope.page = {
-      title: 'Dpd-angular-seed Dashboard',
-      subtitle: 'This is dynamically loaded text from /controllers/dashboard.js'
-    };
-    
-  });
+  .controller('DashboardCtrl', dashboardCtrl);
 
+  dashboardCtrl.$inject = [ '$scope'];
+
+function dashboardCtrl($scope){  
+  $scope.page = {
+    title: 'Dpd-angular-seed Dashboard',
+    subtitle: 'This is dynamically loaded text from /controllers/dashboard.js'
+  };
+
+}
+
+})()

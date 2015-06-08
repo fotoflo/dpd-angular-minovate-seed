@@ -1,3 +1,4 @@
+(function() {
 'use strict';
 
 /**
@@ -8,11 +9,16 @@
  * Controller of the minovateApp
  */
 angular.module('minovateApp')
-  .controller('HeaderCtrl', function ($scope) {
+  .controller('HeaderCtrl', headerCtrl);
 
-    $scope.logout = function(){
-      dpd.users.logout(); // this resets the sid cookie
-      location.href = "/login.html";
-      
-    }         
-  });
+ headerCtrl.$inject = ['$scope', 'userService', '$state'];
+
+function headerCtrl($scope, userService, $state) {
+	
+	$scope.logout = function(){
+	  userService.logout(); // this resets the sid cookie
+	  $state.go( "core.login" );
+	}         
+}
+
+})()

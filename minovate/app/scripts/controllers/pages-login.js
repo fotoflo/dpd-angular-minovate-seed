@@ -1,3 +1,4 @@
+(function() {
 'use strict';
 
 /**
@@ -7,9 +8,18 @@
  * # PagesLoginCtrl
  * Controller of the minovateApp
  */
-angular.module('minovateApp')
-  .controller('LoginCtrl', function ($scope, $state) {
+angular
+	.module('minovateApp')
+	.controller('LoginCtrl', LoginCtrl);
+
+LoginCtrl.$inject = ['$scope', '$state', 'userService'];
+
+function LoginCtrl($scope, $state, userService) {
+ 
     $scope.login = function() {
-      $state.go('app.dashboard');
+    	var user = $scope.user;
+		userService.login(user);
     };
-  });
+}
+
+})()

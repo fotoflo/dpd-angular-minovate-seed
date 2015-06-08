@@ -32,13 +32,22 @@
             <li ui-sref-active="active"><a ui-sref="app.ui.tiles"><fa name="caret-right"></fa> Tiles</a></li>
             <li ui-sref-active="active"><a ui-sref="app.ui.portlets"><fa name="caret-right"></fa> Portlets</a></li>
             <li ui-sref-active="active"><a ui-sref="app.ui.grid"><fa name="caret-right"></fa> Grid</a></li>
-            <li ui-sref-active="active"><a ui-sref="app.ui.widgets"><fa name="caret-right"></fa> Widgets</a></li>
             <li ui-sref-active="active"><a ui-sref="app.ui.tree"><fa name="caret-right"></fa> Tree </a></li>
             <li ui-sref-active="active"><a ui-sref="app.ui.lists"><fa name="caret-right"></fa> Lists</a></li>
             <li ui-sref-active="active"><a ui-sref="app.ui.alerts"><fa name="caret-right"></fa> Alerts & Notifications</a></li>
           </ul>
         </li>
-         
+
+        <li ui-sref-active="active" ng-class="{'open':$state.includes('app.pages')}">
+          <a ui-sref="app.pages"><fa name="desktop"></fa> <span>Extra Pages</span></a>
+          <ul>
+            <li ui-sref-active="active"><a ui-sref="core.login"><fa name="caret-right"></fa> Login Page</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.signup"><fa name="caret-right"></fa> Signup Page</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.forgotpass"><fa name="caret-right"></fa> Forgot Password Page</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.page404"><fa name="caret-right"></fa> Page 404</a></li>
+            <li ui-sref-active="active"><a ui-sref="core.page500"><fa name="caret-right"></fa> Page 500</a></li>
+          </ul>
+        </li>         
 
         <li ui-sref-active="active"><a ui-sref="app.help"><fa name="book"></fa> <span>Documentation</span></a></li>
 
