@@ -1,3 +1,4 @@
+(function() {
 'use strict';
 
 /**
@@ -8,9 +9,13 @@
  * Controller of the minovateApp
  */
 angular.module('minovateApp')
-  .controller('FormUploadCtrl', ['$scope', 'FileUploader', function($scope, FileUploader) {
+  .controller('FormUploadCtrl', uploader);
+
+uploader.$inject = ['$scope', 'FileUploader', 'dpdConfig']
+
+function uploader($scope, FileUploader, dpdConfig) {
     var uploader = $scope.uploader = new FileUploader({
-      //url: 'scripts/modules/fileupload/upload.php' //enable this option to get f
+      url: dpdConfig.serverRoot + 'fileupload'
     });
 
     // FILTERS
@@ -67,4 +72,6 @@ angular.module('minovateApp')
     };
 
     console.info('uploader', uploader);
-  }]);
+  };
+
+})()

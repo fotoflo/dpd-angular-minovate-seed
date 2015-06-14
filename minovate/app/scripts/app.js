@@ -20,6 +20,7 @@ angular
     'ui.bootstrap',
     'ui.router',
     'ui.utils',
+    'angularFileUpload',
     'angular-loading-bar',
     'angular-momentjs',
     'FBAngular',
