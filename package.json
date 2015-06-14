@@ -1,0 +1,14 @@
+{
+  "name": "minovate-dpd-seed",
+  "version": "0.0.1",
+  "description": "Seed dashboard project with deployd, karma,  grunt toolchain, and minovate angular dashboard",
+  "main": "index.html",
+  "scripts": {
+    "test": "karma test"
+  },
+  "author": "@fotoflo",
+  "license": "ISC",
+  "dependencies": {
+    "dpd-mandrill": "https://github.com/mcollis/dpd-mandrill.git"
+  }
+}

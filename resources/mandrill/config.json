@@ -1,0 +1,8 @@
+{
+	"type": "MandrillApi",
+	"api": "N1_AuQtY1Gm43h9k84rrxg",
+	"defaultFromAddress": "fotoflo@gmail.com",
+	"defaultFromName": "Alex Miller",
+	"defaultSubject": "test",
+	"defaultTemplate": "test_template"
+}

@@ -44,7 +44,6 @@ function userService($log, dpd, $http, dpdConfig, $state, $cookies){
 
   function init(){
     dpd.users.get('me', function(user) {
-      debugger;
       if (!user) {
         $state.go('core.login');
       }
