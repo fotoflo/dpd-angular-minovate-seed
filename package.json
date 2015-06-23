@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "dpd-fileupload": "0.0.13",
-    "dpd-mandrill": "https://github.com/mcollis/dpd-mandrill.git"
+    "dpd-mandrill": "mcollis/dpd-mandrill.git"
   }
 }
