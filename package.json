@@ -9,6 +9,7 @@
   "author": "@fotoflo",
   "license": "ISC",
   "dependencies": {
+    "deployd":"^0.8.4",
     "dpd-fileupload": "0.0.13",
     "dpd-mandrill": "mcollis/dpd-mandrill.git"
   }
